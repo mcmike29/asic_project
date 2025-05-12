@@ -1,0 +1,13 @@
+Starting testbench...
+VCD info: dumpfile wave.vcd opened for output.
+Cycle 0: x_in = 0, y_out = 0
+Cycle 1: x_in = 16384, y_out = 4096
+Cycle 2: x_in = 32767, y_out = 11263
+Cycle 3: x_in = 0, y_out = 8446
+Cycle 4: x_in = -16384, y_out = 2238
+Cycle 5: x_in = -32767, y_out = -6514
+Cycle 6: x_in = 0, y_out = -4886
+Cycle 7: x_in = 8192, y_out = -1617
+Cycle 8: x_in = 8192, y_out = 835
+Cycle 9: x_in = 0, y_out = 626
+tb_dynamic_noise_reduction.sv:62: $finish called at 125000 (1ps)
