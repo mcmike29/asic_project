@@ -1,0 +1,1 @@
+magic -dnull -noconsole -rcfile /foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/magic/sky130A.magicrc /usr/local/lib/python3.12/dist-packages/openlane/scripts/magic/wrapper.tcl

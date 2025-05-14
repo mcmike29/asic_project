@@ -1,0 +1,216 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading timing models for corner nom_ff_n40C_1v95…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib'…
+Reading timing models for corner nom_ss_100C_1v60…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib'…
+Reading OpenROAD database at '/home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/42-openroad-repairantennas/1-diodeinsertion/dynamic_noise_reduction.odb'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/openlane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 2
+[INFO] Setting input delay to: 2
+[INFO] Setting load to: 0.033442
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
+[INFO] Setting RC values…
+[INFO] Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO] Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+-congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 4 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 12
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 654
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal      28692         14149          50.69%
+met2       Vertical        21219         13740          35.25%
+met3       Horizontal      14346          9709          32.32%
+met4       Vertical         8556          5262          38.50%
+met5       Horizontal       2847          1368          51.95%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 17406
+[INFO GRT-0198] Via related Steiner nodes: 217
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 21452
+[INFO GRT-0112] Final usage 3D: 75310
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1             14149          4863           34.37%             0 /  0 /  0
+met2             13740          5535           40.28%             0 /  0 /  0
+met3              9709           257            2.65%             0 /  0 /  0
+met4              5262           299            5.68%             0 /  0 /  0
+met5              1368             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            44228         10954           24.77%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 121716 um
+[INFO GRT-0014] Routed nets: 3348
+[INFO RSZ-0094] Found 9 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 9 out of 9 (100.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |    WNS   |   TNS      |  Viol  | Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |            | Endpts | Endpt
+---------------------------------------------------------------------------------------------------
+        0 |       0 |       0 |        0 |      0 |     0 |   -0.652 |       -3.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       10 |       0 |       6 |        0 |      0 |     3 |   -0.501 |       -2.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       20 |       0 |      10 |        2 |      0 |     8 |   -0.613 |       -3.5 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       30 |       0 |      15 |        2 |      0 |    13 |   -0.567 |       -3.2 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       40 |       0 |      19 |        2 |      1 |    18 |   -0.679 |       -4.1 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       50 |       2 |      25 |        2 |      3 |    18 |   -0.588 |       -3.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       53 |       0 |      11 |        1 |      0 |     3 |   -0.501 |       -2.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       60 |       0 |      15 |        1 |      0 |     5 |   -0.541 |       -2.7 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+       70 |       0 |      20 |        1 |      0 |    10 |   -0.708 |       -4.1 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+       80 |       0 |      24 |        1 |      0 |    16 |   -0.838 |       -5.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+       90 |       0 |      30 |        1 |      2 |    18 |   -0.784 |       -4.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      100 |       0 |      37 |        1 |      2 |    21 |   -0.750 |       -4.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      100 |       0 |      18 |        1 |      0 |     5 |   -0.501 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      110 |       0 |      25 |        1 |      0 |     7 |   -0.524 |       -2.4 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      120 |       0 |      33 |        1 |      0 |     9 |   -0.524 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      130 |       0 |      41 |        1 |      2 |     9 |   -0.524 |       -2.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      140 |       0 |      48 |        1 |      3 |    11 |   -0.527 |       -2.4 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      145 |       0 |      25 |        1 |      0 |     5 |   -0.501 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      150 |       0 |      29 |        1 |      0 |     5 |   -0.521 |       -2.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      160 |       0 |      38 |        1 |      1 |     5 |   -0.489 |       -2.7 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      170 |       0 |      45 |        1 |      1 |     8 |   -0.606 |       -3.5 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      180 |       0 |      53 |        3 |      1 |     9 |   -0.491 |       -2.7 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      190 |       0 |      59 |        3 |      2 |    12 |   -0.509 |       -2.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      200 |       1 |      65 |        5 |      3 |    13 |   -0.509 |       -2.9 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      210 |       1 |      71 |        5 |      3 |    17 |   -0.565 |       -3.1 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      217 |       0 |      46 |        3 |      1 |     5 |   -0.472 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      220 |       0 |      48 |        3 |      1 |     5 |   -0.549 |       -2.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      230 |       0 |      56 |        3 |      2 |     6 |   -0.504 |       -2.8 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      240 |       0 |      64 |        5 |      2 |     7 |   -0.471 |       -2.5 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      250 |       0 |      72 |        5 |      3 |     8 |   -0.511 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      256 |       0 |      53 |        5 |      1 |     5 |   -0.473 |       -2.5 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      260 |       0 |      54 |        5 |      1 |     7 |   -0.473 |       -2.4 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      270 |       0 |      63 |        5 |      2 |     7 |   -0.515 |       -2.7 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      280 |       0 |      71 |        7 |      3 |     7 |   -0.511 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      287 |       0 |      56 |        7 |      1 |     7 |   -0.473 |       -2.4 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      290 |       0 |      58 |        7 |      1 |     7 |   -0.482 |       -2.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      290 |       0 |      57 |        7 |      1 |     7 |   -0.473 |       -2.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      300 |       0 |      65 |        7 |      2 |     7 |   -0.526 |       -2.6 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q/D
+      310 |       0 |      72 |        9 |      3 |     8 |   -0.473 |       -2.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      320 |       0 |      82 |        9 |      3 |     8 |   -0.511 |       -2.4 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      323 |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      9 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+      324 |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     325* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     326* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     327* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     328* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     329* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     330* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     330* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     331* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+     332* |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+    final |       0 |      73 |        9 |      3 |     8 |   -0.473 |       -2.3 |      8 | y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D
+---------------------------------------------------------------------------------------------------
+[INFO RSZ-0040] Inserted 1 buffers.
+[INFO RSZ-0041] Resized 73 instances.
+[INFO RSZ-0043] Swapped pins on 8 instances.
+[INFO RSZ-0049] Cloned 3 instances.
+[WARNING RSZ-0062] Unable to repair all setup violations.
+[INFO RSZ-0033] No hold violations found.
+Placement Analysis
+---------------------------------
+total displacement        278.4 u
+average displacement        0.1 u
+max displacement            8.7 u
+original HPWL           71324.0 u
+legalized HPWL          73803.5 u
+delta HPWL                    3 %
+
+[INFO DPL-0020] Mirrored 1447 instances
+[INFO DPL-0021] HPWL before           73803.5 u
+[INFO DPL-0022] HPWL after            71584.9 u
+[INFO DPL-0023] HPWL delta               -3.0 %
+-congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 4 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 12
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 689
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal      28692         14147          50.69%
+met2       Vertical        21219         13740          35.25%
+met3       Horizontal      14346          9709          32.32%
+met4       Vertical         8556          5262          38.50%
+met5       Horizontal       2847          1368          51.95%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 17485
+[INFO GRT-0198] Via related Steiner nodes: 225
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 21467
+[INFO GRT-0112] Final usage 3D: 75431
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1             14147          4745           33.54%             0 /  0 /  0
+met2             13740          5496           40.00%             0 /  0 /  0
+met3              9709           436            4.49%             0 /  0 /  0
+met4              5262           353            6.71%             0 /  0 /  0
+met5              1368             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            44226         11030           24.94%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 121971 um
+[INFO GRT-0014] Routed nets: 3352
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               180     675.65
+  Tap cell                                828    1035.99
+  Antenna cell                              8      20.02
+  Clock buffer                              4      88.84
+  Timing Repair Buffer                    320    2098.26
+  Inverter                                 68     267.76
+  Sequential cell                          16     415.40
+  Multi-Input combinational cell         2911   22580.41
+  Total                                  4335   27182.32
+Writing OpenROAD database to '/home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/43-openroad-resizertimingpostgrt/dynamic_noise_reduction.odb'…
+Writing netlist to '/home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/43-openroad-resizertimingpostgrt/dynamic_noise_reduction.nl.v'…
+Writing powered netlist to '/home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/43-openroad-resizertimingpostgrt/dynamic_noise_reduction.pnl.v'…
+Writing layout to '/home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/43-openroad-resizertimingpostgrt/dynamic_noise_reduction.def'…
+Writing timing constraints to '/home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/43-openroad-resizertimingpostgrt/dynamic_noise_reduction.sdc'…

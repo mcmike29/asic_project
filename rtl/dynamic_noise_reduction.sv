@@ -1,11 +1,11 @@
 module dynamic_noise_reduction #(
-    parameter WIDTH = 16  // Q1.15 fixed-point
+    parameter WIDTH = 16  // Q1.15 fixed-point (16-bit signed fixed-point)
 )(
-    input  logic clk,
-    input  logic reset,
+    input clk,
+    input reset,
 
-    input  logic signed [WIDTH-1:0] x_in,       // current audio sample
-    input  logic signed [WIDTH-1:0] alpha,      // filter weight coefficient (Q1.15) aka "a" variable
+    input signed [WIDTH-1:0] x_in,       // current audio sample
+    input signed [WIDTH-1:0] alpha,      // filter weight coefficient (Q1.15) aka "a" variable
 
     output logic signed [WIDTH-1:0] y_out       // filtered output (Q1.15)
 );
@@ -23,11 +23,11 @@ module dynamic_noise_reduction #(
 
     // Initialize 1.0 as 0x7FFF (Q1.15 format)
     initial begin
-        one_fixed = 16'sd32767;  // 15 bit max number
+        one_fixed = 16'sd32767;  // signed 16 bit value
     end
 
     always_ff @(posedge clk or posedge reset) begin
-        if (reset) begin
+        if (reset) begin // set y values to 0
             y_prev <= '0;
             y_out  <= '0;
         end 
@@ -47,7 +47,7 @@ module dynamic_noise_reduction #(
             // Step 4: Truncate result to 16-bit Q1.15 format
             y_out <= sum_shifted[WIDTH-1:0];
             // Step 5: Update y_prev
-            y_prev <= sum_shifted[WIDTH-1:0];
+            y_prev <= sum_shifted[WIDTH-1:0]; // tried using y_out here but it was a clock cycle behind and messed up the values
         end
     end
 

@@ -1,16 +1,16 @@
 `timescale 1ns / 1ps
 
-module tb_dynamic_noise_reduction; // invalid module item?
+module tb_dynamic_noise_reduction; 
 
-    parameter WIDTH = 16; // dupe instantiation here
-    parameter CYCLES = 10;
+    parameter WIDTH = 16;
+    parameter CYCLES = 10; // test with 10 clock cycles for now
 
     logic clk, reset;
     logic signed [WIDTH-1:0] x_in;
     logic signed [WIDTH-1:0] alpha;
-    logic signed [WIDTH-1:0] y_out; // dupe instantiation here
+    logic signed [WIDTH-1:0] y_out;
 
-    // Instantiate the DUT (Design Under Test)
+    // Instantiation
     dynamic_noise_reduction #(.WIDTH(WIDTH)) dut (
         .clk(clk),
         .reset(reset),
@@ -23,7 +23,7 @@ module tb_dynamic_noise_reduction; // invalid module item?
     always #5 clk = ~clk;  // 100MHz clock
 
     // Sample input audio data (Q1.15 format)
-    logic signed [WIDTH-1:0] test_input [0:CYCLES-1];
+    logic signed [WIDTH-1:0] test_input [0:CYCLES-1]; // this will be the array of hex values from a ADC python program
 
     // Initialize testbench
     initial begin

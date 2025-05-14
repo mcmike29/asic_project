@@ -1,0 +1,9 @@
+
+===========================================================================
+Violator List
+============================================================================
+[setup in-reg] alpha[0] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D : -0.367441
+[setup in-reg] alpha[4] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q/D : -0.262251
+[setup in-reg] alpha[4] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_1/D : -0.221428
+[setup in-reg] alpha[4] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_3/D : -0.099869
+[setup in-reg] alpha[0] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_8/D : -0.059194

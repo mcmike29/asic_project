@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /home/asic/workspace/asic_project/runs/RUN_2025-05-14_18-03-09/53-openroad-fillinsertion/or_metrics_out.json /usr/local/lib/python3.12/dist-packages/openlane/scripts/openroad/fill.tcl

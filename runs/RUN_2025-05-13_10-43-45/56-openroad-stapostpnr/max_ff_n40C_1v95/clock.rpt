@@ -1,0 +1,42 @@
+Clock: clk
+Sources: clk 
+Generated: no
+Virtual: yes
+Propagated: no
+Period: 10.000000
+
+===========================================================================
+report_clock_properties
+============================================================================
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                  10.000000    0.000000  5.000000
+
+===========================================================================
+report_clock_latency
+============================================================================
+Clock clk
+rise -> rise
+    min     max
+0.000000 0.000000 source latency
+0.254307         network latency y_out_sky130_fd_sc_hd__dfrtp_2_Q_8/CLK
+        0.255328 network latency y_out_sky130_fd_sc_hd__dfrtp_2_Q/CLK
+---------------
+0.254307 0.255328 latency
+        0.001021 skew
+
+fall -> fall
+    min     max
+0.000000 0.000000 source latency
+0.231904         network latency y_out_sky130_fd_sc_hd__dfrtp_2_Q_11/CLK
+        0.232911 network latency y_out_sky130_fd_sc_hd__dfrtp_2_Q/CLK
+---------------
+0.231904 0.232911 latency
+        0.001007 skew
+
+
+
+===========================================================================
+report_clock_min_period
+============================================================================
+clk period_min = 4.52 fmax = 221.00

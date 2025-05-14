@@ -1,0 +1,57 @@
+{
+   "creator": "Yosys 0.51 (git sha1 c4b519022, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/asic/workspace/asic_project/runs/RUN_2025-05-13_10-43-45/tmp/bcc873d6623c41cc8388ce5be83f9da1.lib ",
+   "modules": {
+      "\\dynamic_noise_reduction": {
+         "num_wires":         3474,
+         "num_wire_bits":     3549,
+         "num_pub_wires":     5,
+         "num_pub_wire_bits": 50,
+         "num_ports":         5,
+         "num_port_bits":     50,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         3500,
+         "area":              420.403200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1201,
+            "$_AND_": 327,
+            "$_NAND_": 100,
+            "$_NOR_": 162,
+            "$_NOT_": 64,
+            "$_ORNOT_": 162,
+            "$_OR_": 293,
+            "$_XNOR_": 344,
+            "$_XOR_": 831,
+            "sky130_fd_sc_hd__dfrtp_2": 16
+         }
+      }
+   },
+      "design": {
+         "num_wires":         3474,
+         "num_wire_bits":     3549,
+         "num_pub_wires":     5,
+         "num_pub_wire_bits": 50,
+         "num_ports":         5,
+         "num_port_bits":     50,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         3500,
+         "area":              420.403200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1201,
+            "$_AND_": 327,
+            "$_NAND_": 100,
+            "$_NOR_": 162,
+            "$_NOT_": 64,
+            "$_ORNOT_": 162,
+            "$_OR_": 293,
+            "$_XNOR_": 344,
+            "$_XOR_": 831,
+            "sky130_fd_sc_hd__dfrtp_2": 16
+         }
+      }
+}
+

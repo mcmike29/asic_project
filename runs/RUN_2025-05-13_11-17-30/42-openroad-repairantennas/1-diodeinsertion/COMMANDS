@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /home/asic/workspace/asic_project/runs/RUN_2025-05-13_11-17-30/42-openroad-repairantennas/1-diodeinsertion/or_metrics_out.json /usr/local/lib/python3.12/dist-packages/openlane/scripts/openroad/antenna_repair.tcl

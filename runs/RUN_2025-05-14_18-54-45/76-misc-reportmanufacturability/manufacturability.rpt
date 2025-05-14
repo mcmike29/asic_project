@@ -1,0 +1,16 @@
+* Antenna
+Failed 𐄂
+Pin violations: 15
+Net violations: 14
+Check the report directory of OpenROAD.CheckAntennas.
+
+* LVS
+Failed 𐄂
+Total Errors: 1264
+Unmatched Pins: 4
+Unmatched Nets: 1
+Check the report directory of Netgen.LVS.
+
+* DRC
+Passed ✅
+

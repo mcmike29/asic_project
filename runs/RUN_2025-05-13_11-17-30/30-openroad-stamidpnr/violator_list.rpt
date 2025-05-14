@@ -1,0 +1,16 @@
+
+===========================================================================
+Violator List
+============================================================================
+[setup in-reg] alpha[2] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q/D : -0.324595
+[setup in-reg] alpha[2] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_1/D : -0.259855
+[setup in-reg] alpha[2] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D : -0.171128
+[setup in-reg] alpha[2] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_2/D : -0.115673
+[setup in-reg] alpha[2] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_3/D : -0.028002
+[setup in-reg] alpha[2] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_8/D : -0.011518
+Writing metric timing__hold_vio__count__corner:nom_tt_025C_1v80: 0
+Writing metric timing__hold_r2r__ws__corner:nom_tt_025C_1v80: 1.270896
+Writing metric timing__hold_r2r_vio__count__corner:nom_tt_025C_1v80: 0
+Writing metric timing__setup_vio__count__corner:nom_tt_025C_1v80: 6
+Writing metric timing__setup_r2r__ws__corner:nom_tt_025C_1v80: 1e30
+Writing metric timing__setup_r2r_vio__count__corner:nom_tt_025C_1v80: 0

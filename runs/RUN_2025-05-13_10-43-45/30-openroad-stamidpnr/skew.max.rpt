@@ -1,0 +1,15 @@
+
+===========================================================================
+Clock Skew (Setup)
+============================================================================
+Writing metric clock__skew__worst_setup__corner:nom_tt_025C_1v80: 0.25060412787593567
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Clock clk
+0.156091 source latency y_out_sky130_fd_sc_hd__dfrtp_2_Q/CLK ^
+-0.155487 target latency y_out_sky130_fd_sc_hd__dfrtp_2_Q_11/CLK ^
+0.250000 clock uncertainty
+0.000000 CRPR
+--------------
+0.250604 setup skew
+

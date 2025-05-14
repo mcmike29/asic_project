@@ -1,0 +1,20 @@
+
+===========================================================================
+Violator List
+============================================================================
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_3/D : -4.736343
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q/D : -4.735466
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/D : -4.716075
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_2/D : -4.640505
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_1/D : -4.638928
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_8/D : -4.481266
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_4/D : -4.459198
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_5/D : -4.377124
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_6/D : -4.039907
+[setup in-reg] alpha[8] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_12/D : -3.988264
+[setup in-reg] alpha[6] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_9/D : -3.831430
+[setup in-reg] alpha[8] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_10/D : -3.807480
+[setup in-reg] alpha[8] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_11/D : -3.653242
+[setup in-reg] alpha[8] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_13/D : -2.940615
+[setup in-reg] alpha[8] -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_14/D : -2.874252
+[setup reg-reg] y_out_sky130_fd_sc_hd__dfrtp_2_Q_7/Q -> y_out_sky130_fd_sc_hd__dfrtp_2_Q_15/D : -2.839759
