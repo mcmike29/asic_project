@@ -1,0 +1,19 @@
+┏━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ P / R ┃ Partial ┃ Required ┃ Net                                                        ┃ Pin                                                        ┃ Layer ┃
+┡━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ 1.73  │ 690.56  │ 400.00   │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_8_D_sky130_fd_sc_hd__xor… │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_8_D_sky130_fd_sc_hd__xor… │ met1  │
+│ 1.66  │ 664.58  │ 400.00   │ net26                                                      │ fanout178/A                                                │ met1  │
+│ 1.38  │ 552.80  │ 400.00   │ net159                                                     │ fanout157/A                                                │ met1  │
+│ 1.30  │ 518.94  │ 400.00   │ net237                                                     │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_11_D_sky130_fd_sc_hd__xo… │ met1  │
+│ 1.30  │ 518.78  │ 400.00   │ net241                                                     │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_6_D_sky130_fd_sc_hd__xor… │ met1  │
+│ 1.26  │ 502.22  │ 400.00   │ net60                                                      │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_6_D_sky130_fd_sc_hd__xor… │ met1  │
+│ 1.21  │ 482.24  │ 400.00   │ net34                                                      │ fanout88/A                                                 │ met1  │
+│ 1.16  │ 463.22  │ 400.00   │ net209                                                     │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_11_D_sky130_fd_sc_hd__xo… │ met1  │
+│ 1.14  │ 456.87  │ 400.00   │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_D_sky130_fd_sc_hd__xnor2… │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_8_D_sky130_fd_sc_hd__xor… │ met1  │
+│ 1.14  │ 455.46  │ 400.00   │ net200                                                     │ fanout198/A                                                │ met1  │
+│ 1.12  │ 446.50  │ 400.00   │ net163                                                     │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_8_D_sky130_fd_sc_hd__xor… │ met1  │
+│ 1.07  │ 428.22  │ 400.00   │ net145                                                     │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_11_D_sky130_fd_sc_hd__xo… │ met1  │
+│ 1.06  │ 423.50  │ 400.00   │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_D_sky130_fd_sc_hd__xnor2… │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_D_sky130_fd_sc_hd__xnor2… │ met1  │
+│ 1.05  │ 419.74  │ 400.00   │ net125                                                     │ fanout124/A                                                │ met1  │
+│ 1.02  │ 408.18  │ 400.00   │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_D_sky130_fd_sc_hd__xnor2… │ y_out_sky130_fd_sc_hd__dfrtp_2_Q_8_D_sky130_fd_sc_hd__xor… │ met1  │
+└───────┴─────────┴──────────┴────────────────────────────────────────────────────────────┴────────────────────────────────────────────────────────────┴───────┘

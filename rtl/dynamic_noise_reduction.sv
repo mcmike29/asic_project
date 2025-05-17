@@ -21,10 +21,11 @@ module dynamic_noise_reduction #(
     logic signed [2 * WIDTH-1:0] one_fixed_ext;
     logic signed [2 * WIDTH-1:0] alpha_ext;
 
+    assign one_fixed = 16'sd32767;
     // Initialize 1.0 as 0x7FFF (Q1.15 format)
-    initial begin
-        one_fixed = 16'sd32767;  // signed 16 bit value
-    end
+    // initial begin
+    //     one_fixed = 16'sd32767;  // signed 16 bit value
+    // end
 
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin // set y values to 0

@@ -66,11 +66,13 @@ VL_INLINE_OPT void Vtb_dynamic_noise_reduction___024root___nba_sequent__TOP__0(V
     // Body
     __Vdly__tb_dynamic_noise_reduction__DOT__dut__DOT__y_prev 
         = vlSelfRef.tb_dynamic_noise_reduction__DOT__dut__DOT__y_prev;
+    if ((1U & (~ (IData)(vlSelfRef.tb_dynamic_noise_reduction__DOT__reset)))) {
+        vlSelfRef.tb_dynamic_noise_reduction__DOT__dut__DOT__one_fixed_ext = 0x7fffU;
+    }
     if (vlSelfRef.tb_dynamic_noise_reduction__DOT__reset) {
         __Vdly__tb_dynamic_noise_reduction__DOT__dut__DOT__y_prev = 0U;
         vlSelfRef.tb_dynamic_noise_reduction__DOT__y_out = 0U;
     } else {
-        vlSelfRef.tb_dynamic_noise_reduction__DOT__dut__DOT__one_fixed_ext = 0x7fffU;
         vlSelfRef.tb_dynamic_noise_reduction__DOT__dut__DOT__alpha_ext 
             = (((- (IData)((1U & ((IData)(vlSelfRef.tb_dynamic_noise_reduction__DOT__alpha) 
                                   >> 0xfU)))) << 0x10U) 

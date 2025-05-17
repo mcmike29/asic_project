@@ -1,0 +1,98 @@
+Reading OpenROAD database at '/home/asic/workspace/asic_project/runs/RUN_2025-05-17_03-20-44/20-openroad-generatepdn/dynamic_noise_reduction.odb'…
+Reading library file at '/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading design constraints file at '/usr/local/lib/python3.12/dist-packages/openlane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 4
+[INFO] Setting input delay to: 4
+[INFO] Setting load to: 0.033442
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
++ global_placement -density 0.1491412 -skip_io -pad_right 0 -pad_left 0 -init_wirelength_coef 0.25
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  5.520 10.880 ) ( 994.060 987.360 ) um
+[INFO GPL-0006] NumInstances:             17430
+[INFO GPL-0007] NumPlaceInstances:         2994
+[INFO GPL-0008] NumFixedInstances:        14436
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                   3028
+[INFO GPL-0011] NumPins:                  10900
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 1000.000 1000.000 ) um
+[INFO GPL-0013] CoreBBox: (  5.520 10.880 ) ( 994.060 987.360 ) um
+[INFO GPL-0016] CoreArea:            965289.539 um^2
+[INFO GPL-0017] NonPlaceInstsArea:    19859.046 um^2
+[INFO GPL-0018] PlaceInstsArea:       30271.533 um^2
+[INFO GPL-0019] Util:                     3.202 %
+[INFO GPL-0020] StdInstsArea:         30271.533 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[INFO GPL-0031] FillerInit:NumGCells:     14092
+[INFO GPL-0032] FillerInit:NumGNets:       3028
+[INFO GPL-0033] FillerInit:NumGPins:      10900
+[INFO GPL-0023] TargetDensity:            0.149
+[INFO GPL-0024] AvrgPlaceInstArea:       10.111 um^2
+[INFO GPL-0025] IdealBinArea:            67.793 um^2
+[INFO GPL-0026] IdealBinCnt:              14238
+[INFO GPL-0027] TotalBinArea:        965289.539 um^2
+[INFO GPL-0028] BinCnt:        64     64
+[INFO GPL-0029] BinSize: ( 15.446 15.258 )
+[INFO GPL-0030] NumBins: 4096
+[NesterovSolve] Iter:    1 overflow: 0.995 HPWL: 8907939
+[NesterovSolve] Iter:   10 overflow: 0.995 HPWL: 5315045
+[NesterovSolve] Iter:   20 overflow: 0.995 HPWL: 5231895
+[NesterovSolve] Iter:   30 overflow: 0.995 HPWL: 5213016
+[NesterovSolve] Iter:   40 overflow: 0.995 HPWL: 5210271
+[NesterovSolve] Iter:   50 overflow: 0.995 HPWL: 5211417
+[NesterovSolve] Iter:   60 overflow: 0.995 HPWL: 5213709
+[NesterovSolve] Iter:   70 overflow: 0.995 HPWL: 5218213
+[NesterovSolve] Iter:   80 overflow: 0.995 HPWL: 5225980
+[NesterovSolve] Iter:   90 overflow: 0.995 HPWL: 5239269
+[NesterovSolve] Iter:  100 overflow: 0.995 HPWL: 5263491
+[NesterovSolve] Iter:  110 overflow: 0.995 HPWL: 5307851
+[NesterovSolve] Iter:  120 overflow: 0.995 HPWL: 5384693
+[NesterovSolve] Iter:  130 overflow: 0.994 HPWL: 5523903
+[NesterovSolve] Iter:  140 overflow: 0.991 HPWL: 5790947
+[NesterovSolve] Iter:  150 overflow: 0.989 HPWL: 6464608
+[NesterovSolve] Iter:  160 overflow: 0.983 HPWL: 9012893
+[NesterovSolve] Iter:  170 overflow: 0.971 HPWL: 14906322
+[NesterovSolve] Iter:  180 overflow: 0.950 HPWL: 22148483
+[NesterovSolve] Iter:  190 overflow: 0.918 HPWL: 29829296
+[NesterovSolve] Iter:  200 overflow: 0.897 HPWL: 34647971
+[NesterovSolve] Iter:  210 overflow: 0.885 HPWL: 36606009
+[NesterovSolve] Iter:  220 overflow: 0.852 HPWL: 42152018
+[NesterovSolve] Iter:  230 overflow: 0.797 HPWL: 50471509
+[NesterovSolve] Iter:  240 overflow: 0.761 HPWL: 55482376
+[NesterovSolve] Iter:  250 overflow: 0.726 HPWL: 61185970
+[NesterovSolve] Iter:  260 overflow: 0.665 HPWL: 67954527
+[NesterovSolve] Iter:  270 overflow: 0.622 HPWL: 71969079
+[NesterovSolve] Iter:  280 overflow: 0.576 HPWL: 76245351
+[NesterovSolve] Iter:  290 overflow: 0.514 HPWL: 80930467
+[NesterovSolve] Iter:  300 overflow: 0.463 HPWL: 83769702
+[NesterovSolve] Iter:  310 overflow: 0.410 HPWL: 86449896
+[NesterovSolve] Iter:  320 overflow: 0.362 HPWL: 88885086
+[NesterovSolve] Iter:  330 overflow: 0.318 HPWL: 89939873
+[NesterovSolve] Iter:  340 overflow: 0.285 HPWL: 90283938
+[NesterovSolve] Iter:  350 overflow: 0.249 HPWL: 91836697
+[NesterovSolve] Iter:  360 overflow: 0.218 HPWL: 92826709
+[NesterovSolve] Iter:  370 overflow: 0.187 HPWL: 93639833
+[NesterovSolve] Iter:  380 overflow: 0.166 HPWL: 94383759
+[NesterovSolve] Iter:  390 overflow: 0.147 HPWL: 94835597
+[NesterovSolve] Iter:  400 overflow: 0.129 HPWL: 95218836
+[NesterovSolve] Iter:  410 overflow: 0.108 HPWL: 95265562
+[NesterovSolve] Finished with Overflow: 0.099071
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               718    2695.08
+  Tap cell                              13718   17163.96
+  Inverter                                 62     232.72
+  Sequential cell                          16     420.40
+  Multi-Input combinational cell         2916   29618.41
+  Total                                 17430   50130.58
+Writing OpenROAD database to '/home/asic/workspace/asic_project/runs/RUN_2025-05-17_03-20-44/23-openroad-globalplacementskipio/dynamic_noise_reduction.odb'…
+Writing netlist to '/home/asic/workspace/asic_project/runs/RUN_2025-05-17_03-20-44/23-openroad-globalplacementskipio/dynamic_noise_reduction.nl.v'…
+Writing powered netlist to '/home/asic/workspace/asic_project/runs/RUN_2025-05-17_03-20-44/23-openroad-globalplacementskipio/dynamic_noise_reduction.pnl.v'…
+Writing layout to '/home/asic/workspace/asic_project/runs/RUN_2025-05-17_03-20-44/23-openroad-globalplacementskipio/dynamic_noise_reduction.def'…
+Writing timing constraints to '/home/asic/workspace/asic_project/runs/RUN_2025-05-17_03-20-44/23-openroad-globalplacementskipio/dynamic_noise_reduction.sdc'…

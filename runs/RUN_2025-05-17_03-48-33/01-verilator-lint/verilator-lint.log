@@ -1,0 +1,29 @@
+%Warning-UNUSEDSIGNAL: rtl/dynamic_noise_reduction.sv:17:34: Bits of signal are not used: 'sum_shifted'[31:16]
+                                                           : ... note: In instance 'dynamic_noise_reduction'
+   17 |     logic signed [2 * WIDTH-1:0] sum_shifted;
+      |                                  ^~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.034
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-BLKSEQ: rtl/dynamic_noise_reduction.sv:37:27: Blocking assignment '=' in sequential logic process
+                                                     : ... Suggest using delayed assignment '<='
+   37 |             one_fixed_ext = {{(WIDTH){one_fixed[WIDTH-1]}}, one_fixed};
+      |                           ^
+%Warning-BLKSEQ: rtl/dynamic_noise_reduction.sv:38:23: Blocking assignment '=' in sequential logic process
+                                                     : ... Suggest using delayed assignment '<='
+   38 |             alpha_ext = {{(WIDTH){alpha[WIDTH-1]}}, alpha};
+      |                       ^
+%Warning-BLKSEQ: rtl/dynamic_noise_reduction.sv:41:25: Blocking assignment '=' in sequential logic process
+                                                     : ... Suggest using delayed assignment '<='
+   41 |             a_x_product = x_in * alpha;
+      |                         ^
+%Warning-BLKSEQ: rtl/dynamic_noise_reduction.sv:44:29: Blocking assignment '=' in sequential logic process
+                                                     : ... Suggest using delayed assignment '<='
+   44 |             a_yprev_product = y_prev * (one_fixed_ext - alpha_ext);
+      |                             ^
+%Warning-BLKSEQ: rtl/dynamic_noise_reduction.sv:47:25: Blocking assignment '=' in sequential logic process
+                                                     : ... Suggest using delayed assignment '<='
+   47 |             sum_shifted = (a_x_product + a_yprev_product) >>> 15;
+      |                         ^
+- V e r i l a t i o n   R e p o r t: Verilator 5.034 2025-02-24 rev v5.034
+- Verilator: Built from 0.376 MB sources in 443 modules, into 0.012 MB in 4 C++ files needing 0.000 MB
+- Verilator: Walltime 0.042 s (elab=0.008, cvt=0.002, bld=0.000); cpu 0.042 s on 1 threads; alloced 17.270 MB
