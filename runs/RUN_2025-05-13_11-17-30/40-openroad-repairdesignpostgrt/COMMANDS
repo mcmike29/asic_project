@@ -1,1 +1,0 @@
-openroad -exit -no_splash -metrics /home/asic/workspace/asic_project/runs/RUN_2025-05-13_11-17-30/40-openroad-repairdesignpostgrt/or_metrics_out.json /usr/local/lib/python3.12/dist-packages/openlane/scripts/openroad/repair_design_postgrt.tcl

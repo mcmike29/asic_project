@@ -4,18 +4,18 @@ module dynamic_noise_reduction #(
     input clk,
     input reset,
 
-    input signed [WIDTH-1:0] x_in,       // current audio sample
-    input signed [WIDTH-1:0] alpha,      // filter weight coefficient (Q1.15) aka "a" variable
+    input signed [WIDTH-1:0] x_in,  // current audio sample
+    input signed [WIDTH-1:0] alpha, // filter weight coefficient (Q1.15) aka "a" variable
 
-    output logic signed [WIDTH-1:0] y_out       // filtered output (Q1.15)
+    output logic signed [WIDTH-1:0] y_out   // filtered output (Q1.15)
 );
 
     // Internal registers
     logic signed [WIDTH-1:0] y_prev;
     logic signed [2 * WIDTH-1:0] a_x_product;       // alpha * x_in
-    logic signed [2 * WIDTH-1:0] a_yprev_product;      // (1 - alpha) * y_prev        
+    logic signed [2 * WIDTH-1:0] a_yprev_product;   // (1 - alpha) * y_prev        
     logic signed [2 * WIDTH-1:0] sum_shifted;
-    logic signed [WIDTH-1:0] one_fixed;  // Fixed-point '1.0'
+    logic signed [WIDTH-1:0] one_fixed;     // Fixed-point '1.0'
 
     // Extended versions to 32-bit for subtraction
     logic signed [2 * WIDTH-1:0] one_fixed_ext;
@@ -48,7 +48,7 @@ module dynamic_noise_reduction #(
             // Step 4: Truncate result to 16-bit Q1.15 format
             y_out <= sum_shifted[WIDTH-1:0];
             // Step 5: Update y_prev
-            y_prev <= sum_shifted[WIDTH-1:0]; // tried using y_out here but it was a clock cycle behind and messed up the values
+            y_prev <= sum_shifted[WIDTH-1:0];   // tried using y_out here but it was a clock cycle behind and messed up the values
         end
     end
 
