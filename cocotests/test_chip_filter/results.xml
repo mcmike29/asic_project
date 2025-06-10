@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1749107056" />
+    <testcase name="run_filter_test" classname="test_chip_filter" file="/home/asic/workspace/asic_project/cocotests/test_chip_filter/test_chip_filter.py" lineno="10" time="5337.0786719322205" sim_time_ns="1257456020.001" ratio_time="235607.5481169091" />
+  </testsuite>
+</testsuites>
