@@ -43,6 +43,7 @@ module dynamic_noise_filter_top (
             case (ram_addr)
                 ALPHA_ADDR: alpha <= ram_dout[15:0];
                 ENABLE_ADDR: filter_enabled <= ram_dout[0];
+                default:      ; // No-op
             endcase
         end
     end

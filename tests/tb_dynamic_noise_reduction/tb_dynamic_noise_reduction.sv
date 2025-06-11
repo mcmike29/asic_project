@@ -1,65 +1,96 @@
-`timescale 1ns / 1ps
+`timescale 1ns/1ps
 
-module tb_dynamic_noise_reduction; 
+module tb_dynamic_noise_reduction;
 
-    parameter WIDTH = 16;
-    parameter CYCLES = 10; // test with 10 clock cycles for now
+  // DUT I/O
+  logic clk = 0;
+  logic reset;
+  logic spi_clk = 0;
+  logic spi_mosi;
+  logic spi_miso;
+  logic spi_sel;
 
-    logic clk, reset;
-    logic signed [WIDTH-1:0] x_in;
-    logic signed [WIDTH-1:0] alpha;
-    logic signed [WIDTH-1:0] y_out;
+  // Clock generation
+  always #5 clk = ~clk;       // 100 MHz system clock
+  always #100 spi_clk = ~spi_clk;  // 5 MHz SPI clock
 
-    // Instantiation
-    dynamic_noise_reduction #(.WIDTH(WIDTH)) dut (
-        .clk(clk),
-        .reset(reset),
-        .x_in(x_in),
-        .alpha(alpha),
-        .y_out(y_out)
-    );
+  // Instantiate DUT (update this module name as needed)
+  dynamic_noise_filter_top dut (
+    .clk(clk),
+    .reset(reset),
+    .spi_clk(spi_clk),
+    .spi_mosi(spi_mosi),
+    .spi_miso(spi_miso),
+    .spi_sel(spi_sel)
+  );
 
-    // Clock generation
-    always #5 clk = ~clk;  // 100MHz clock
+  // File handles
+  integer sample_file, log_file;
+  integer i;
+  logic [15:0] sample;
 
-    // Sample input audio data (Q1.15 format)
-    logic signed [WIDTH-1:0] test_input [0:CYCLES-1]; // this will be the array of hex values from a ADC python program
+  initial begin
+    $dumpfile("wave.vcd");       // Name of the output VCD file
+    $dumpvars(0, tb_dynamic_noise_reduction); // Dump all variables recursively from the top module
 
-    // Initialize testbench
-    initial begin
-        $display("Starting testbench...");
-        $dumpfile("wave.vcd");
-        $dumpvars(0, tb_dynamic_noise_reduction);
+    // Initialize
+    reset = 1;
+    spi_sel = 1;
+    spi_mosi = 0;
 
-        clk = 0;
-        reset = 1;
-        alpha = 16'sd8192; // 0.25 in Q1.15 (8192 = 0x2000)
-        x_in = 0;
+    repeat (5) @(posedge clk);
+    reset = 0;
 
-        // Example signal: a sudden pulse in audio
-        test_input[0] = 16'sd0;        // 0.0
-        test_input[1] = 16'sd16384;    // 0.5
-        test_input[2] = 16'sd32767;    // ~1.0
-        test_input[3] = 16'sd0;        // back to 0.0
-        test_input[4] = -16'sd16384;   // -0.5
-        test_input[5] = -16'sd32767;   // -1.0
-        test_input[6] = 16'sd0;
-        test_input[7] = 16'sd8192;     // 0.25
-        test_input[8] = 16'sd8192;     // steady
-        test_input[9] = 16'sd0;
+    // Open files
+    sample_file = $fopen("short_audio_input.txt", "r");
+    log_file = $fopen("spi_output_log.txt", "w");
 
-        #12 reset = 0;
-
-        // Feed inputs one-by-one per cycle
-        for (int i = 0; i < CYCLES; i++) begin
-            x_in = test_input[i];
-            @(posedge clk);
-            $display("Cycle %0d: x_in = %0d, y_out = %0d", i, x_in, y_out);
-        end
-
-        // Finish sim
-        #20;
-        $finish;
+    if (sample_file == 0) begin
+      $fatal(1, "Failed to open short_audio_input.txt");
     end
+
+    // Processes exactly 16 samples just for SPI interface testing and a viewable waveform
+    for (i = 0; i < 16; i++) begin
+      if (!$feof(sample_file)) begin
+        void'($fscanf(sample_file, "%d\n", sample));
+        send_spi_word(sample);
+      end else begin
+        $fatal(1, "Reached end of file before 16 samples");
+      end
+    end
+
+    // // Main loop: read each sample and send over SPI
+    // while (!$feof(sample_file)) begin
+    //   void'($fscanf(sample_file, "%d\n", sample));
+    //   send_spi_word(sample);
+    // end
+
+    $fclose(sample_file);
+    $fclose(log_file);
+    #1000;
+    $finish;
+  end
+
+  // SPI transfer task (16 bits MSB-first)
+  task send_spi_word(input logic [15:0] word);
+    integer bit_index;
+    logic [15:0] result;
+    result = 0;
+
+    spi_sel = 0;
+
+    for (bit_index = 15; bit_index >= 0; bit_index--) begin
+      spi_mosi = word[bit_index];
+      #50 spi_clk = 1;  // Rising edge
+      #50 spi_clk = 0;  // Falling edge
+    end
+
+    spi_sel = 1;
+
+    // Optionally log the output
+    $fwrite(log_file, "%0d\n", dut.spi_miso);
+
+    #200; // Inter-transfer delay
+  endtask
 
 endmodule

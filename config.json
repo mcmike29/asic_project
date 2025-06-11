@@ -1,6 +1,12 @@
 {
-    "DESIGN_NAME": "dynamic_noise_reduction",
-    "VERILOG_FILES": "./rtl/dynamic_noise_reduction.sv",
+    "DESIGN_NAME": "dynamic_noise_reduction_top",
+    "VERILOG_FILES": [
+        "rtl/spi_rx.sv",
+        "rtl/spi_tx.sv",
+        "rtl/DFFRAM256x32.v",
+        "rtl/dynamic_noise_reduction.sv",
+        "rtl/dynamic_noise_filter_top.sv"
+    ],
     "CLOCK_PERIOD": 30,
     "CLOCK_PORT": "clk",
     "FP_PDN_VOFFSET": 5,
@@ -11,7 +17,6 @@
     "FP_PDN_HSPACING": 15.5,
     "FP_PDN_VPITCH": 100,
     "FP_PDN_HPITCH": 100,
-
     "FP_PDN_CORE_RING": true,
     "FP_PDN_CORE_RING_VWIDTH": 3.1,
     "FP_PDN_CORE_RING_HWIDTH": 3.1,
@@ -24,4 +29,4 @@
     "SYNTH_AUTONAME": true,
     "FP_SIZING": "absolute",
     "DIE_AREA": [0, 0, 700, 700]
-}
+  }  

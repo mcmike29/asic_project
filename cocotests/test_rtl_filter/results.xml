@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1749611738" />
+    <testcase name="fast_filter_test" classname="test_rtl_filter" file="/home/asic/workspace/asic_project/cocotests/test_rtl_filter/test_rtl_filter.py" lineno="14" time="4.099545955657959" sim_time_ns="64008.001" ratio_time="15613.436632332372" />
+  </testsuite>
+</testsuites>

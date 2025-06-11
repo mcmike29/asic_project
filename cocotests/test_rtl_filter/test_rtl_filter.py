@@ -2,7 +2,13 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 import numpy as np
-from audio_util import wav_normalized_samples, write_q15_wav
+from audio_util import wav_normalized_samples
+import  q15_to_wav as q15
+from scipy.io.wavfile import write as wav_write
+
+
+# samples = wav_normalized_samples("input.wav", num_samples=256)  # or 128, etc.
+# np.savetxt("short_audio_input.txt", samples, fmt="%d")
 
 @cocotb.test()
 async def fast_filter_test(dut):
@@ -30,5 +36,7 @@ async def fast_filter_test(dut):
         output_samples.append(output)
 
     # Save the output as WAV
-    write_q15_wav("filtered_output_fast.wav", output_samples, samplerate=16000)
+    float_audio = q15.q15_to_float(np.array(output_samples))
+    wav_data = np.int16(float_audio * 32767)
+    wav_write("filtered_output_fast.wav", 16000, wav_data)
     dut._log.info("Filtered audio written to 'filtered_output_fast.wav'")

@@ -43,7 +43,7 @@ Vtb_dynamic_noise_reduction__Syms::Vtb_dynamic_noise_reduction__Syms(VerilatedCo
     , TOP{this, namep}
 {
         // Check resources
-        Verilated::stackCheck(15);
+        Verilated::stackCheck(104);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);

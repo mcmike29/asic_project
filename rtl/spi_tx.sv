@@ -10,7 +10,7 @@ module spi_tx (
 );
 
     logic [15:0] shift_reg;
-    logic [3:0] bit_cnt;
+    logic [4:0] bit_cnt;
     logic sclk_prev;
 
     always_ff @(posedge clk or posedge reset) begin

@@ -31,6 +31,7 @@ VM_CLASSES_FAST += \
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	Vtb_dynamic_noise_reduction___024root__Slow \
+	Vtb_dynamic_noise_reduction___024root__DepSet_hc652111a__0__Slow \
 	Vtb_dynamic_noise_reduction___024root__DepSet_h8b06e7f7__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
