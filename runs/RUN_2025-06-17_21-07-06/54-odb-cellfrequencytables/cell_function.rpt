@@ -1,0 +1,66 @@
+                                                                       Cells by Function                                                                        
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Cell Function                                                                                                                  ┃ Count                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ sky130_ef_sc_hd__decap                                                                                                         │ 25733                       │
+│ sky130_fd_sc_hd__a211o                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__a21bo                                                                                                         │ 5                           │
+│ sky130_fd_sc_hd__a21boi                                                                                                        │ 3                           │
+│ sky130_fd_sc_hd__a21o                                                                                                          │ 35                          │
+│ sky130_fd_sc_hd__a21oi                                                                                                         │ 27                          │
+│ sky130_fd_sc_hd__a221o                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__a22o                                                                                                          │ 6                           │
+│ sky130_fd_sc_hd__a22oi                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__a2bb2o                                                                                                        │ 3                           │
+│ sky130_fd_sc_hd__a2bb2oi                                                                                                       │ 1                           │
+│ sky130_fd_sc_hd__a311o                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__a31o                                                                                                          │ 7                           │
+│ sky130_fd_sc_hd__a32o                                                                                                          │ 3                           │
+│ sky130_fd_sc_hd__a41o                                                                                                          │ 1                           │
+│ sky130_fd_sc_hd__a41oi                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__and2                                                                                                          │ 33                          │
+│ sky130_fd_sc_hd__and2b                                                                                                         │ 28                          │
+│ sky130_fd_sc_hd__and3                                                                                                          │ 22                          │
+│ sky130_fd_sc_hd__and3b                                                                                                         │ 4                           │
+│ sky130_fd_sc_hd__and4                                                                                                          │ 2                           │
+│ sky130_fd_sc_hd__buf                                                                                                           │ 18                          │
+│ sky130_fd_sc_hd__bufinv                                                                                                        │ 1                           │
+│ sky130_fd_sc_hd__clkbuf                                                                                                        │ 28                          │
+│ sky130_fd_sc_hd__clkinvlp                                                                                                      │ 3                           │
+│ sky130_fd_sc_hd__decap                                                                                                         │ 7525                        │
+│ sky130_fd_sc_hd__dfrtp                                                                                                         │ 74                          │
+│ sky130_fd_sc_hd__diode                                                                                                         │ 10                          │
+│ sky130_fd_sc_hd__dlygate4sd3                                                                                                   │ 58                          │
+│ sky130_fd_sc_hd__fill                                                                                                          │ 6847                        │
+│ sky130_fd_sc_hd__inv                                                                                                           │ 88                          │
+│ sky130_fd_sc_hd__mux2                                                                                                          │ 67                          │
+│ sky130_fd_sc_hd__nand2                                                                                                         │ 72                          │
+│ sky130_fd_sc_hd__nand2b                                                                                                        │ 13                          │
+│ sky130_fd_sc_hd__nand3                                                                                                         │ 7                           │
+│ sky130_fd_sc_hd__nand3b                                                                                                        │ 1                           │
+│ sky130_fd_sc_hd__nand4                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__nor2                                                                                                          │ 51                          │
+│ sky130_fd_sc_hd__nor3                                                                                                          │ 2                           │
+│ sky130_fd_sc_hd__nor3b                                                                                                         │ 2                           │
+│ sky130_fd_sc_hd__o211a                                                                                                         │ 3                           │
+│ sky130_fd_sc_hd__o21a                                                                                                          │ 11                          │
+│ sky130_fd_sc_hd__o21ai                                                                                                         │ 23                          │
+│ sky130_fd_sc_hd__o21ba                                                                                                         │ 6                           │
+│ sky130_fd_sc_hd__o21bai                                                                                                        │ 2                           │
+│ sky130_fd_sc_hd__o221a                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__o22a                                                                                                          │ 3                           │
+│ sky130_fd_sc_hd__o2bb2a                                                                                                        │ 2                           │
+│ sky130_fd_sc_hd__o2bb2ai                                                                                                       │ 1                           │
+│ sky130_fd_sc_hd__o311a                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__o31a                                                                                                          │ 4                           │
+│ sky130_fd_sc_hd__o31ai                                                                                                         │ 1                           │
+│ sky130_fd_sc_hd__o32a                                                                                                          │ 4                           │
+│ sky130_fd_sc_hd__or2                                                                                                           │ 49                          │
+│ sky130_fd_sc_hd__or3                                                                                                           │ 12                          │
+│ sky130_fd_sc_hd__or3b                                                                                                          │ 4                           │
+│ sky130_fd_sc_hd__or4                                                                                                           │ 1                           │
+│ sky130_fd_sc_hd__or4b                                                                                                          │ 1                           │
+│ sky130_fd_sc_hd__tapvpwrvgnd                                                                                                   │ 6651                        │
+│ sky130_fd_sc_hd__xnor2                                                                                                         │ 122                         │
+│ sky130_fd_sc_hd__xor2                                                                                                          │ 51                          │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────┘

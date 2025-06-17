@@ -21,6 +21,13 @@ module dynamic_noise_filter_top (
     logic ram_en;
     logic [31:0] ram_din, ram_dout;
 
+    // Temporary patch: tie off RAM inputs to avoid lint errors
+    assign ram_addr = 8'd0;
+    assign ram_we   = 4'b0000;  // read mode
+    assign ram_en   = 1'b1;
+    assign ram_din  = 32'b0;
+
+
     // Instantiate DFFRAM (256 x 32)
     DFFRAM256x32 config_ram (
         .CLK(clk),

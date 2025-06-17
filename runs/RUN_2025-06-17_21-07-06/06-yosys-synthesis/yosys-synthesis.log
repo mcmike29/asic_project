@@ -1,0 +1,1605 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.51 (git sha1 c4b519022, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)
+
+1. Executing Liberty frontend: /foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: rtl/spi_rx.sv
+Parsing SystemVerilog input from `rtl/spi_rx.sv' to AST representation.
+Storing AST representation for module `$abstract\spi_rx'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/spi_tx.sv
+Parsing SystemVerilog input from `rtl/spi_tx.sv' to AST representation.
+Storing AST representation for module `$abstract\spi_tx'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/DFFRAM256x32.v
+Parsing SystemVerilog input from `rtl/DFFRAM256x32.v' to AST representation.
+Storing AST representation for module `$abstract\DFFRAM256x32'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/dynamic_noise_reduction.sv
+Parsing SystemVerilog input from `rtl/dynamic_noise_reduction.sv' to AST representation.
+Storing AST representation for module `$abstract\dynamic_noise_reduction'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: rtl/dynamic_noise_filter_top.sv
+Parsing SystemVerilog input from `rtl/dynamic_noise_filter_top.sv' to AST representation.
+Storing AST representation for module `$abstract\dynamic_noise_filter_top'.
+Successfully finished Verilog frontend.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+8. Executing AST frontend in derive mode using pre-parsed AST for module `\dynamic_noise_filter_top'.
+Generating RTLIL representation for module `\dynamic_noise_filter_top'.
+
+8.1. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+
+8.2. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_tx'.
+Generating RTLIL representation for module `\spi_tx'.
+
+8.3. Executing AST frontend in derive mode using pre-parsed AST for module `\dynamic_noise_reduction'.
+Generating RTLIL representation for module `\dynamic_noise_reduction'.
+
+8.4. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_rx'.
+Generating RTLIL representation for module `\spi_rx'.
+
+8.5. Executing AST frontend in derive mode using pre-parsed AST for module `\DFFRAM256x32'.
+Generating RTLIL representation for module `\DFFRAM256x32'.
+
+8.6. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+Used module:     \spi_tx
+Used module:     \dynamic_noise_reduction
+Used module:     \spi_rx
+Used module:     \DFFRAM256x32
+
+8.7. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+Used module:     \spi_tx
+Used module:     \dynamic_noise_reduction
+Used module:     \spi_rx
+Used module:     \DFFRAM256x32
+Removing unused module `$abstract\dynamic_noise_filter_top'.
+Removing unused module `$abstract\dynamic_noise_reduction'.
+Removing unused module `$abstract\DFFRAM256x32'.
+Removing unused module `$abstract\spi_tx'.
+Removing unused module `$abstract\spi_rx'.
+Removed 5 unused modules.
+Renaming module dynamic_noise_filter_top to dynamic_noise_filter_top.
+
+9. Generating Graphviz representation of design.
+Writing dot description to `/home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/06-yosys-synthesis/hierarchy.dot'.
+Dumping module dynamic_noise_filter_top to page 1.
+
+10. Executing TRIBUF pass.
+
+11. Executing HIERARCHY pass (managing design hierarchy).
+
+11.1. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+Used module:     \spi_tx
+Used module:     \dynamic_noise_reduction
+Used module:     \spi_rx
+Used module:     \DFFRAM256x32
+
+11.2. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+Used module:     \spi_tx
+Used module:     \dynamic_noise_reduction
+Used module:     \spi_rx
+Used module:     \DFFRAM256x32
+Removed 0 unused modules.
+
+12. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+13. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/dynamic_noise_filter_top.sv:45$1 in module dynamic_noise_filter_top.
+Marked 1 switch rules as full_case in process $proc$rtl/spi_rx.sv:16$22 in module spi_rx.
+Marked 1 switch rules as full_case in process $proc$rtl/dynamic_noise_reduction.sv:30$16 in module dynamic_noise_reduction.
+Marked 2 switch rules as full_case in process $proc$rtl/spi_tx.sv:16$5 in module spi_tx.
+Marked 5 switch rules as full_case in process $proc$rtl/DFFRAM256x32.v:45$33 in module DFFRAM256x32.
+Removed a total of 0 dead cases.
+
+14. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 6 redundant assignments.
+Promoted 17 assignments to connections.
+
+15. Executing PROC_INIT pass (extract init attributes).
+
+16. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\dynamic_noise_filter_top.$proc$rtl/dynamic_noise_filter_top.sv:45$1'.
+Found async reset \reset in `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+Found async reset \reset in `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+Found async reset \reset in `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+
+17. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~12 debug messages>
+
+18. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\dynamic_noise_filter_top.$proc$rtl/dynamic_noise_filter_top.sv:45$1'.
+     1/2: $0\filter_enabled[0:0]
+     2/2: $0\alpha[15:0]
+Creating decoders for process `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+     1/5: $0\valid_out[0:0]
+     2/5: $0\sclk_prev[0:0]
+     3/5: $0\bit_cnt[3:0]
+     4/5: $0\shift_reg[15:0]
+     5/5: $0\data_out[15:0]
+Creating decoders for process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+     1/7: $0\y_prev[15:0]
+     2/7: $0\y_out[15:0]
+     3/7: $1\sum_shifted[31:0]
+     4/7: $1\a_yprev_product[31:0]
+     5/7: $1\a_x_product[31:0]
+     6/7: $1\alpha_ext[31:0]
+     7/7: $1\one_fixed_ext[31:0]
+Creating decoders for process `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+     1/4: $0\sclk_prev[0:0]
+     2/4: $0\bit_cnt[4:0]
+     3/4: $0\shift_reg[15:0]
+     4/4: $0\miso[0:0]
+Creating decoders for process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+     1/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_EN[31:0]$70
+     2/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_DATA[31:0]$69
+     3/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_ADDR[7:0]$68
+     4/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_EN[31:0]$67
+     5/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_DATA[31:0]$66
+     6/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_ADDR[7:0]$65
+     7/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_EN[31:0]$64
+     8/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_DATA[31:0]$63
+     9/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_ADDR[7:0]$62
+    10/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_EN[31:0]$61
+    11/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_DATA[31:0]$60
+    12/25: $2$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_ADDR[7:0]$59
+    13/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_EN[31:0]$57
+    14/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_DATA[31:0]$56
+    15/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_ADDR[7:0]$55
+    16/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_EN[31:0]$54
+    17/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_DATA[31:0]$53
+    18/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_ADDR[7:0]$52
+    19/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_EN[31:0]$51
+    20/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_DATA[31:0]$50
+    21/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_ADDR[7:0]$49
+    22/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_EN[31:0]$48
+    23/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_DATA[31:0]$47
+    24/25: $1$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_ADDR[7:0]$46
+    25/25: $0\Do0[31:0]
+
+19. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+20. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\dynamic_noise_filter_top.\alpha' using process `\dynamic_noise_filter_top.$proc$rtl/dynamic_noise_filter_top.sv:45$1'.
+  created $adff cell `$procdff$228' with positive edge clock and positive level reset.
+Creating register for signal `\dynamic_noise_filter_top.\filter_enabled' using process `\dynamic_noise_filter_top.$proc$rtl/dynamic_noise_filter_top.sv:45$1'.
+  created $adff cell `$procdff$231' with positive edge clock and positive level reset.
+Creating register for signal `\spi_rx.\data_out' using process `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+  created $adff cell `$procdff$234' with positive edge clock and positive level reset.
+Creating register for signal `\spi_rx.\valid_out' using process `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+  created $adff cell `$procdff$237' with positive edge clock and positive level reset.
+Creating register for signal `\spi_rx.\shift_reg' using process `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+  created $adff cell `$procdff$240' with positive edge clock and positive level reset.
+Creating register for signal `\spi_rx.\bit_cnt' using process `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+  created $adff cell `$procdff$243' with positive edge clock and positive level reset.
+Creating register for signal `\spi_rx.\sclk_prev' using process `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+  created $adff cell `$procdff$246' with positive edge clock and positive level reset.
+Creating register for signal `\dynamic_noise_reduction.\y_out' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $adff cell `$procdff$249' with positive edge clock and positive level reset.
+Creating register for signal `\dynamic_noise_reduction.\y_prev' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $adff cell `$procdff$252' with positive edge clock and positive level reset.
+Creating register for signal `\dynamic_noise_reduction.\a_x_product' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $dff cell `$procdff$257' with positive edge clock.
+Creating register for signal `\dynamic_noise_reduction.\a_yprev_product' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $dff cell `$procdff$262' with positive edge clock.
+Creating register for signal `\dynamic_noise_reduction.\sum_shifted' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $dff cell `$procdff$267' with positive edge clock.
+Creating register for signal `\dynamic_noise_reduction.\one_fixed_ext' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $dff cell `$procdff$272' with positive edge clock.
+Creating register for signal `\dynamic_noise_reduction.\alpha_ext' using process `\dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+  created $dff cell `$procdff$277' with positive edge clock.
+Creating register for signal `\spi_tx.\miso' using process `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+  created $adff cell `$procdff$280' with positive edge clock and positive level reset.
+Creating register for signal `\spi_tx.\shift_reg' using process `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+  created $adff cell `$procdff$283' with positive edge clock and positive level reset.
+Creating register for signal `\spi_tx.\bit_cnt' using process `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+  created $adff cell `$procdff$286' with positive edge clock and positive level reset.
+Creating register for signal `\spi_tx.\sclk_prev' using process `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+  created $adff cell `$procdff$289' with positive edge clock and positive level reset.
+Creating register for signal `\DFFRAM256x32.\Do0' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_ADDR' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_DATA' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:48$29_EN' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$293' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_ADDR' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$294' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_DATA' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$295' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:49$30_EN' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$296' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_ADDR' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$297' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_DATA' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$298' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:50$31_EN' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$299' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_ADDR' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$300' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_DATA' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$301' with positive edge clock.
+Creating register for signal `\DFFRAM256x32.$memwr$\RAM$rtl/DFFRAM256x32.v:51$32_EN' using process `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+  created $dff cell `$procdff$302' with positive edge clock.
+
+21. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+22. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\dynamic_noise_filter_top.$proc$rtl/dynamic_noise_filter_top.sv:45$1'.
+Removing empty process `dynamic_noise_filter_top.$proc$rtl/dynamic_noise_filter_top.sv:45$1'.
+Found and cleaned up 2 empty switches in `\spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+Removing empty process `spi_rx.$proc$rtl/spi_rx.sv:16$22'.
+Removing empty process `dynamic_noise_reduction.$proc$rtl/dynamic_noise_reduction.sv:30$16'.
+Found and cleaned up 3 empty switches in `\spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+Removing empty process `spi_tx.$proc$rtl/spi_tx.sv:16$5'.
+Found and cleaned up 5 empty switches in `\DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+Removing empty process `DFFRAM256x32.$proc$rtl/DFFRAM256x32.v:45$33'.
+Cleaned up 12 empty switches.
+
+23. Executing CHECK pass (checking for obvious problems).
+Checking module dynamic_noise_filter_top...
+Checking module spi_rx...
+Checking module dynamic_noise_reduction...
+Checking module spi_tx...
+Checking module DFFRAM256x32...
+Found and reported 0 problems.
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~13 debug messages>
+Optimizing module spi_rx.
+<suppressed ~5 debug messages>
+Optimizing module dynamic_noise_reduction.
+<suppressed ~8 debug messages>
+Optimizing module spi_tx.
+<suppressed ~9 debug messages>
+Optimizing module DFFRAM256x32.
+
+25. Executing FLATTEN pass (flatten design).
+Deleting now unused module spi_rx.
+Deleting now unused module dynamic_noise_reduction.
+Deleting now unused module spi_tx.
+Deleting now unused module DFFRAM256x32.
+<suppressed ~4 debug messages>
+
+26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~37 debug messages>
+
+27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 23 unused cells and 202 unused wires.
+<suppressed ~29 debug messages>
+
+28. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+30. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+31. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+32. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+33. Executing OPT_DFF pass (perform DFF optimizations).
+Handling D = Q on $procdff$231 ($adff) from module dynamic_noise_filter_top (removing D path).
+Setting constant 1-bit at position 0 on $procdff$231 ($dlatch) from module dynamic_noise_filter_top.
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+35. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~1 debug messages>
+
+36. Rerunning OPT passes. (Maybe there is more to do…)
+
+37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+40. Executing OPT_DFF pass (perform DFF optimizations).
+
+41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+42. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+43. Executing FSM pass (extract and optimize FSM).
+
+43.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+43.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+43.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+43.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+43.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+43.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+43.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+43.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+44. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+45. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+46. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+47. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+48. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+49. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\spi_out.$procdff$286 ($adff) from module dynamic_noise_filter_top (D = $flatten\spi_out.$procmux$97_Y, Q = \spi_out.bit_cnt).
+Adding EN signal on $flatten\spi_out.$procdff$283 ($adff) from module dynamic_noise_filter_top (D = $flatten\spi_out.$procmux$104_Y, Q = \spi_out.shift_reg).
+Adding EN signal on $flatten\spi_out.$procdff$280 ($adff) from module dynamic_noise_filter_top (D = $flatten\spi_out.$procmux$111_Y, Q = \spi_out.miso).
+Adding EN signal on $flatten\spi_in.$procdff$243 ($adff) from module dynamic_noise_filter_top (D = $flatten\spi_in.$procmux$84_Y, Q = \spi_in.bit_cnt).
+Adding EN signal on $flatten\spi_in.$procdff$240 ($adff) from module dynamic_noise_filter_top (D = { \spi_in.shift_reg [14:0] \spi_mosi }, Q = \spi_in.shift_reg).
+Adding EN signal on $flatten\spi_in.$procdff$234 ($adff) from module dynamic_noise_filter_top (D = { \spi_in.shift_reg [14:0] \spi_mosi }, Q = \spi_in.data_out).
+
+50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 7 unused cells and 7 unused wires.
+<suppressed ~8 debug messages>
+
+51. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~3 debug messages>
+
+52. Rerunning OPT passes. (Maybe there is more to do…)
+
+53. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+54. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+55. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+56. Executing OPT_DFF pass (perform DFF optimizations).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+58. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+59. Rerunning OPT passes. (Maybe there is more to do…)
+
+60. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+61. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+62. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+63. Executing OPT_DFF pass (perform DFF optimizations).
+
+64. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+65. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+66. Executing WREDUCE pass (reducing word size of cells).
+Removed top 16 bits (of 32) from FF cell dynamic_noise_filter_top.$flatten\config_ram.$procdff$290 ($dff).
+Removed top 1 bits (of 16) from FF cell dynamic_noise_filter_top.$auto$ff.cc:266:slice$333 ($adffe).
+Removed top 31 bits (of 32) from port B of cell dynamic_noise_filter_top.$flatten\spi_in.$add$rtl/spi_rx.sv:30$27 ($add).
+Removed top 28 bits (of 32) from port Y of cell dynamic_noise_filter_top.$flatten\spi_in.$add$rtl/spi_rx.sv:30$27 ($add).
+Removed top 1 bits (of 32) from port Y of cell dynamic_noise_filter_top.$flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20 ($add).
+Removed top 1 bits (of 32) from port A of cell dynamic_noise_filter_top.$flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20 ($add).
+Removed top 1 bits (of 32) from port B of cell dynamic_noise_filter_top.$flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20 ($add).
+Removed top 1 bits (of 32) from port Y of cell dynamic_noise_filter_top.$flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19 ($mul).
+Converting cell dynamic_noise_filter_top.$flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18 ($sub) from unsigned to signed.
+Removed top 16 bits (of 32) from port A of cell dynamic_noise_filter_top.$flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18 ($sub).
+Removed top 16 bits (of 32) from port B of cell dynamic_noise_filter_top.$flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18 ($sub).
+Removed top 15 bits (of 32) from port Y of cell dynamic_noise_filter_top.$flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18 ($sub).
+Removed top 1 bits (of 32) from port Y of cell dynamic_noise_filter_top.$flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:41$17 ($mul).
+Removed top 1 bits (of 16) from FF cell dynamic_noise_filter_top.$auto$ff.cc:266:slice$318 ($adffe).
+Removed top 1 bits (of 16) from mux cell dynamic_noise_filter_top.$flatten\spi_out.$procmux$104 ($mux).
+Removed top 1 bits (of 16) from mux cell dynamic_noise_filter_top.$flatten\spi_out.$procmux$101 ($mux).
+Removed top 27 bits (of 32) from mux cell dynamic_noise_filter_top.$flatten\spi_out.$ternary$rtl/spi_tx.sv:35$15 ($mux).
+Removed top 31 bits (of 32) from port B of cell dynamic_noise_filter_top.$flatten\spi_out.$add$rtl/spi_tx.sv:35$14 ($add).
+Removed top 27 bits (of 32) from port Y of cell dynamic_noise_filter_top.$flatten\spi_out.$add$rtl/spi_tx.sv:35$14 ($add).
+Removed top 15 bits (of 32) from port B of cell dynamic_noise_filter_top.$flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19 ($mul).
+Removed top 1 bits (of 32) from wire dynamic_noise_filter_top.$flatten\filter.$0\a_x_product[31:0].
+Removed top 1 bits (of 32) from wire dynamic_noise_filter_top.$flatten\filter.$0\a_yprev_product[31:0].
+Removed top 16 bits (of 32) from wire dynamic_noise_filter_top.$flatten\filter.$0\sum_shifted[31:0].
+Removed top 1 bits (of 32) from wire dynamic_noise_filter_top.$flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20_Y.
+Removed top 28 bits (of 32) from wire dynamic_noise_filter_top.$flatten\spi_in.$add$rtl/spi_rx.sv:30$27_Y.
+Removed top 27 bits (of 32) from wire dynamic_noise_filter_top.$flatten\spi_out.$add$rtl/spi_tx.sv:35$14_Y.
+Removed top 16 bits (of 32) from wire dynamic_noise_filter_top.ram_dout.
+
+67. Executing PEEPOPT pass (run peephole optimizers).
+
+68. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+69. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module dynamic_noise_filter_top:
+  creating $macc model for $flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20 ($add).
+  creating $macc model for $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:41$17 ($mul).
+  creating $macc model for $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19 ($mul).
+  creating $macc model for $flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18 ($sub).
+  creating $macc model for $flatten\spi_in.$add$rtl/spi_rx.sv:30$27 ($add).
+  creating $macc model for $flatten\spi_out.$add$rtl/spi_tx.sv:35$14 ($add).
+  merging $macc model for $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:41$17 into $flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20.
+  merging $macc model for $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19 into $flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20.
+  creating $alu model for $macc $flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18.
+  creating $alu model for $macc $flatten\spi_out.$add$rtl/spi_tx.sv:35$14.
+  creating $alu model for $macc $flatten\spi_in.$add$rtl/spi_rx.sv:30$27.
+  creating $macc cell for $flatten\filter.$add$rtl/dynamic_noise_reduction.sv:47$20: $auto$alumacc.cc:365:replace_macc$344
+  creating $alu cell for $flatten\spi_in.$add$rtl/spi_rx.sv:30$27: $auto$alumacc.cc:495:replace_alu$345
+  creating $alu cell for $flatten\spi_out.$add$rtl/spi_tx.sv:35$14: $auto$alumacc.cc:495:replace_alu$348
+  creating $alu cell for $flatten\filter.$sub$rtl/dynamic_noise_reduction.sv:44$18: $auto$alumacc.cc:495:replace_alu$351
+  created 3 $alu and 1 $macc cells.
+
+70. Executing SHARE pass (SAT-based resource sharing).
+Found 2 cells in module dynamic_noise_filter_top that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19 ($mul):
+    Found cell that is never activated: $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:41$17 ($mul):
+    Found cell that is never activated: $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:41$17
+    Cell is never active. Sharing is pointless, we simply remove it.
+Removing 2 cells in module dynamic_noise_filter_top:
+  Removing cell $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:41$17 ($mul).
+  Removing cell $flatten\filter.$mul$rtl/dynamic_noise_reduction.sv:44$19 ($mul).
+
+71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+72. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+76. Executing OPT_DFF pass (perform DFF optimizations).
+
+77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+79. Rerunning OPT passes. (Maybe there is more to do…)
+
+80. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+81. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+82. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+83. Executing OPT_DFF pass (perform DFF optimizations).
+
+84. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+86. Executing MEMORY pass.
+
+86.1. Executing OPT_MEM pass (optimize memories).
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 0
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 1
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 2
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 3
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 4
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 5
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 6
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 7
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 8
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 9
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 10
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 11
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 12
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 13
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 14
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 15
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 16
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 17
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 18
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 19
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 20
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 21
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 22
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 23
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 24
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 25
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 26
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 27
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 28
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 29
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 30
+dynamic_noise_filter_top.config_ram.RAM: removing const-x lane 31
+Performed a total of 5 transformations.
+
+86.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+86.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+86.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+86.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+86.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+86.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+86.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+86.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+86.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+87. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+88. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~18 debug messages>
+
+89. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+90. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 1-bit at position 0 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 1 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 2 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 3 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 4 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 5 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 6 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 7 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 8 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 9 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 10 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 11 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 12 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 13 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 14 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 15 on $flatten\config_ram.$procdff$290 ($dff) from module dynamic_noise_filter_top.
+
+91. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+92. Rerunning OPT passes (Removed registers in this run.)
+
+93. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+94. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+95. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 1 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 2 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 3 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 4 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 5 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 6 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 7 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 8 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 9 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 10 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 11 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 12 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 1-bit at position 13 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 14 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+Setting constant 0-bit at position 15 on $procdff$228 ($adff) from module dynamic_noise_filter_top.
+
+96. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+97. Rerunning OPT passes (Removed registers in this run.)
+
+98. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~22 debug messages>
+
+99. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+100. Executing OPT_DFF pass (perform DFF optimizations).
+
+101. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 21 unused wires.
+<suppressed ~1 debug messages>
+
+102. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+103. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+104. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+105. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+106. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+107. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+108. Executing OPT_SHARE pass.
+
+109. Executing OPT_DFF pass (perform DFF optimizations).
+
+110. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+111. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+112. Executing TECHMAP pass (map to technology primitives).
+
+112.1. Executing Verilog-2005 frontend: /foss/tools/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/foss/tools/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+112.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper maccmap for cells of type $macc.
+  add \spi_in.data_out * 16'0010000000000000 (16x16 bits, signed)
+  add 17'00101111111111111 * \filter.y_out (17x16 bits, signed)
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011111 for cells of type $fa.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$ebf89ea36a793f0f77858f212141d47c833068ad\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011111 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~928 debug messages>
+
+113. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+<suppressed ~4786 debug messages>
+
+114. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+<suppressed ~1272 debug messages>
+Removed a total of 424 cells.
+
+115. Executing OPT_DFF pass (perform DFF optimizations).
+
+116. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 83 unused cells and 554 unused wires.
+<suppressed ~84 debug messages>
+
+117. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+118. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+119. Executing OPT_DFF pass (perform DFF optimizations).
+
+120. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+121. Executing ABC pass (technology mapping using ABC).
+
+121.1. Extracting gate netlist of module `\dynamic_noise_filter_top' to `<abc-temp-dir>/input.blif'..
+Extracted 977 gates and 1039 wires to a netlist network with 60 inputs and 44 outputs.
+
+121.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+121.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:            ANDNOT cells:      334
+ABC RESULTS:               MUX cells:       16
+ABC RESULTS:              NAND cells:       14
+ABC RESULTS:               NOR cells:       51
+ABC RESULTS:               NOT cells:       36
+ABC RESULTS:                OR cells:      115
+ABC RESULTS:             ORNOT cells:       50
+ABC RESULTS:              XNOR cells:       74
+ABC RESULTS:               XOR cells:      293
+ABC RESULTS:        internal signals:      935
+ABC RESULTS:           input signals:       60
+ABC RESULTS:          output signals:       44
+Removing temp directory.
+
+122. Executing OPT pass (performing simple optimizations).
+
+122.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+122.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+122.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+122.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 0 unused cells and 266 unused wires.
+<suppressed ~1 debug messages>
+
+122.5. Finished fast OPT passes.
+
+123. Executing HIERARCHY pass (managing design hierarchy).
+
+123.1. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+
+123.2. Analyzing design hierarchy..
+Top module:  \dynamic_noise_filter_top
+Removed 0 unused modules.
+
+124. Executing CHECK pass (checking for obvious problems).
+Checking module dynamic_noise_filter_top...
+Found and reported 0 problems.
+
+125. Printing statistics.
+
+=== dynamic_noise_filter_top ===
+
+   Number of wires:               1039
+   Number of wire bits:           1399
+   Number of public wires:          51
+   Number of public wire bits:     381
+   Number of ports:                  6
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1081
+     $_ANDNOT_                     334
+     $_AND_                         21
+     $_DFFE_PP0P_                   56
+     $_DFF_PP0_                     18
+     $_MUX_                         16
+     $_NAND_                        13
+     $_NOR_                         51
+     $_NOT_                         36
+     $_ORNOT_                       50
+     $_OR_                         115
+     $_XNOR_                        74
+     $_XOR_                        293
+     $scopeinfo                      4
+
+126. Generating Graphviz representation of design.
+Writing dot description to `/home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module dynamic_noise_filter_top to page 1.
+
+127. Executing OPT pass (performing simple optimizations).
+
+127.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+127.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+127.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dynamic_noise_filter_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+127.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dynamic_noise_filter_top.
+Performed a total of 0 changes.
+
+127.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dynamic_noise_filter_top'.
+Removed a total of 0 cells.
+
+127.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+127.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+
+127.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dynamic_noise_filter_top.
+
+127.9. Finished OPT passes. (There is nothing left to do.)
+
+128. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 4 unused cells and 37 unused wires.
+<suppressed ~41 debug messages>
+{
+   "creator": "Yosys 0.51 (git sha1 c4b519022, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/tmp/c7afc231c2a848aca236be88dfafc933.lib ",
+   "modules": {
+      "\\dynamic_noise_filter_top": {
+         "num_wires":         1002,
+         "num_wire_bits":     1099,
+         "num_pub_wires":     14,
+         "num_pub_wire_bits": 81,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1077,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 334,
+            "$_AND_": 21,
+            "$_DFFE_PP0P_": 56,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 16,
+            "$_NAND_": 13,
+            "$_NOR_": 51,
+            "$_NOT_": 36,
+            "$_ORNOT_": 50,
+            "$_OR_": 115,
+            "$_XNOR_": 74,
+            "$_XOR_": 293
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1002,
+         "num_wire_bits":     1099,
+         "num_pub_wires":     14,
+         "num_pub_wire_bits": 81,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1077,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 334,
+            "$_AND_": 21,
+            "$_DFFE_PP0P_": 56,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 16,
+            "$_NAND_": 13,
+            "$_NOR_": 51,
+            "$_NOT_": 36,
+            "$_ORNOT_": 50,
+            "$_OR_": 115,
+            "$_XNOR_": 74,
+            "$_XOR_": 293
+         }
+      }
+}
+
+129. Printing statistics.
+
+=== dynamic_noise_filter_top ===
+
+   Number of wires:               1002
+   Number of wire bits:           1099
+   Number of public wires:          14
+   Number of public wire bits:      81
+   Number of ports:                  6
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1077
+     $_ANDNOT_                     334
+     $_AND_                         21
+     $_DFFE_PP0P_                   56
+     $_DFF_PP0_                     18
+     $_MUX_                         16
+     $_NAND_                        13
+     $_NOR_                         51
+     $_NOT_                         36
+     $_ORNOT_                       50
+     $_OR_                         115
+     $_XNOR_                        74
+     $_XOR_                        293
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFF_PP0_ is unknown!
+   Area for cell type $_DFFE_PP0P_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+130. Executing TECHMAP pass (map to technology primitives).
+
+130.1. Executing Verilog-2005 frontend: /foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+130.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+131. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+132. Executing TECHMAP pass (map to technology primitives).
+
+132.1. Executing Verilog-2005 frontend: /foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/foss/pdks/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+132.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+133. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+134. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+134.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\dynamic_noise_filter_top':
+  mapped 74 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+{
+   "creator": "Yosys 0.51 (git sha1 c4b519022, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/tmp/c7afc231c2a848aca236be88dfafc933.lib ",
+   "modules": {
+      "\\dynamic_noise_filter_top": {
+         "num_wires":         1132,
+         "num_wire_bits":     1229,
+         "num_pub_wires":     14,
+         "num_pub_wire_bits": 81,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1207,
+         "area":              1944.364800,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 334,
+            "$_AND_": 21,
+            "$_MUX_": 72,
+            "$_NAND_": 13,
+            "$_NOR_": 51,
+            "$_NOT_": 110,
+            "$_ORNOT_": 50,
+            "$_OR_": 115,
+            "$_XNOR_": 74,
+            "$_XOR_": 293,
+            "sky130_fd_sc_hd__dfrtp_2": 74
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1132,
+         "num_wire_bits":     1229,
+         "num_pub_wires":     14,
+         "num_pub_wire_bits": 81,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1207,
+         "area":              1944.364800,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 334,
+            "$_AND_": 21,
+            "$_MUX_": 72,
+            "$_NAND_": 13,
+            "$_NOR_": 51,
+            "$_NOT_": 110,
+            "$_ORNOT_": 50,
+            "$_OR_": 115,
+            "$_XNOR_": 74,
+            "$_XOR_": 293,
+            "sky130_fd_sc_hd__dfrtp_2": 74
+         }
+      }
+}
+
+135. Printing statistics.
+
+=== dynamic_noise_filter_top ===
+
+   Number of wires:               1132
+   Number of wire bits:           1229
+   Number of public wires:          14
+   Number of public wire bits:      81
+   Number of ports:                  6
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1207
+     $_ANDNOT_                     334
+     $_AND_                         21
+     $_MUX_                         72
+     $_NAND_                        13
+     $_NOR_                         51
+     $_NOT_                        110
+     $_ORNOT_                       50
+     $_OR_                         115
+     $_XNOR_                        74
+     $_XOR_                        293
+     sky130_fd_sc_hd__dfrtp_2       74
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\dynamic_noise_filter_top': 1944.364800
+     of which used for sequential elements: 1944.364800 (100.00%)
+
+[INFO] Using generated ABC script '/home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/06-yosys-synthesis/AREA_0.abc'…
+
+136. Executing ABC pass (technology mapping using ABC).
+
+136.1. Extracting gate netlist of module `\dynamic_noise_filter_top' to `/tmp/yosys-abc-GLmTjI/input.blif'..
+Extracted 1133 gates and 1211 wires to a netlist network with 78 inputs and 147 outputs.
+
+136.1.1. Executing ABC.
+Running ABC command: "/foss/tools/yosys/bin/yosys-abc" -s -f /tmp/yosys-abc-GLmTjI/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-GLmTjI/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-GLmTjI/input.blif 
+ABC: + read_lib -w /home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/tmp/c7afc231c2a848aca236be88dfafc933.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.10 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/tmp/c7afc231c2a848aca236be88dfafc933.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.16 sec
+ABC: Memory =    9.54 MB. Time =     0.16 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =    790 ( 11.0 %)   Cap = 14.1 ff (  4.3 %)   Area =     7587.28 ( 78.9 %)   Delay =  6122.44 ps  (  5.4 %)               
+ABC: Path  0 --      73 : 0   12 pi                        A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  48.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     365 : 2    7 sky130_fd_sc_hd__or2_2    A =   6.26  Df = 321.9 -196.1 ps  S =  89.6 ps  Cin =  1.5 ff  Cout =  15.3 ff  Cmax = 299.4 ff  G = 1030  
+ABC: Path  2 --     484 : 3    2 sky130_fd_sc_hd__a21o_2   A =   8.76  Df = 534.0 -264.7 ps  S =  51.0 ps  Cin =  2.4 ff  Cout =   7.3 ff  Cmax = 309.5 ff  G =  293  
+ABC: Path  3 --     489 : 5   16 sky130_fd_sc_hd__a311o_2  A =  11.26  Df =1091.0 -348.1 ps  S = 405.8 ps  Cin =  2.3 ff  Cout =  78.1 ff  Cmax = 298.5 ff  G = 3285  
+ABC: Path  4 --     697 : 2    1 sky130_fd_sc_hd__nand2b_2 A =   8.76  Df =1321.6 -392.7 ps  S =  37.5 ps  Cin =  3.0 ff  Cout =   1.6 ff  Cmax = 285.7 ff  G =   51  
+ABC: Path  5 --     698 : 3    2 sky130_fd_sc_hd__and3b_2  A =  10.01  Df =1530.5 -415.7 ps  S =  60.1 ps  Cin =  1.5 ff  Cout =   6.3 ff  Cmax = 309.5 ff  G =  400  
+ABC: Path  6 --     699 : 2    3 sky130_fd_sc_hd__and2_2   A =   7.51  Df =1743.9 -453.8 ps  S =  85.1 ps  Cin =  1.5 ff  Cout =  13.1 ff  Cmax = 303.0 ff  G =  854  
+ABC: Path  7 --     701 : 2    2 sky130_fd_sc_hd__or2_2    A =   6.26  Df =2050.8 -352.8 ps  S =  64.9 ps  Cin =  1.5 ff  Cout =   6.1 ff  Cmax = 299.4 ff  G =  408  
+ABC: Path  8 --     711 : 2    2 sky130_fd_sc_hd__or2_2    A =   6.26  Df =2359.7 -379.9 ps  S =  64.7 ps  Cin =  1.5 ff  Cout =   6.1 ff  Cmax = 299.4 ff  G =  403  
+ABC: Path  9 --     712 : 2    2 sky130_fd_sc_hd__and2_2   A =   7.51  Df =2555.7 -329.5 ps  S =  44.4 ps  Cin =  1.5 ff  Cout =   4.2 ff  Cmax = 303.0 ff  G =  275  
+ABC: Path 10 --     715 : 3    2 sky130_fd_sc_hd__or3_2    A =   7.51  Df =3016.0 -675.9 ps  S =  90.0 ps  Cin =  1.5 ff  Cout =   6.7 ff  Cmax = 310.4 ff  G =  424  
+ABC: Path 11 --     716 : 2    1 sky130_fd_sc_hd__and2b_2  A =   8.76  Df =3239.6 -346.4 ps  S =  61.4 ps  Cin =  1.6 ff  Cout =   8.5 ff  Cmax = 310.4 ff  G =  515  
+ABC: Path 12 --     717 : 2    2 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =3383.8 -342.5 ps  S = 127.1 ps  Cin =  8.6 ff  Cout =   6.0 ff  Cmax = 130.0 ff  G =   67  
+ABC: Path 13 --     719 : 3    1 sky130_fd_sc_hd__or3_2    A =   7.51  Df =3774.0 -611.2 ps  S =  69.3 ps  Cin =  1.5 ff  Cout =   1.5 ff  Cmax = 310.4 ff  G =   96  
+ABC: Path 14 --     720 : 2    2 sky130_fd_sc_hd__and2_2   A =   7.51  Df =3999.4 -350.5 ps  S =  85.0 ps  Cin =  1.5 ff  Cout =  13.1 ff  Cmax = 303.0 ff  G =  867  
+ABC: Path 15 --     722 : 2    2 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =4140.8 -345.8 ps  S = 138.6 ps  Cin =  8.5 ff  Cout =   6.1 ff  Cmax = 121.8 ff  G =   68  
+ABC: Path 16 --     723 : 2    3 sky130_fd_sc_hd__or2_2    A =   6.26  Df =4301.3 -199.2 ps  S =  79.6 ps  Cin =  1.5 ff  Cout =  11.5 ff  Cmax = 299.4 ff  G =  770  
+ABC: Path 17 --     725 : 2    2 sky130_fd_sc_hd__nand2_2  A =   6.26  Df =4364.7  -77.0 ps  S =  70.7 ps  Cin =  4.4 ff  Cout =   9.9 ff  Cmax = 295.7 ff  G =  214  
+ABC: Path 18 --     726 : 3    3 sky130_fd_sc_hd__o21bai_2 A =  11.26  Df =4631.0  -56.0 ps  S = 183.8 ps  Cin =  3.4 ff  Cout =  12.2 ff  Cmax = 140.1 ff  G =  343  
+ABC: Path 19 --     812 : 5    4 sky130_fd_sc_hd__o311a_2  A =  11.26  Df =5030.3 -130.8 ps  S = 120.5 ps  Cin =  2.4 ff  Cout =  19.4 ff  Cmax = 293.9 ff  G =  786  
+ABC: Path 20 --     922 : 4    3 sky130_fd_sc_hd__o31a_2   A =  10.01  Df =5426.4 -325.8 ps  S =  96.5 ps  Cin =  2.3 ff  Cout =  14.9 ff  Cmax = 285.7 ff  G =  609  
+ABC: Path 21 --     933 : 3    1 sky130_fd_sc_hd__or3_2    A =   7.51  Df =5865.2 -652.6 ps  S =  69.2 ps  Cin =  1.5 ff  Cout =   1.4 ff  Cmax = 310.4 ff  G =   93  
+ABC: Path 22 --     942 : 3    1 sky130_fd_sc_hd__and3_2   A =   7.51  Df =6122.4 -640.5 ps  S = 182.1 ps  Cin =  1.5 ff  Cout =  33.4 ff  Cmax = 309.5 ff  G = 2252  
+ABC: Start-point = pi72 (\filter.y_out [10]).  End-point = po72 ($auto$maccmap.cc:240:synth$695.Y [30]).
+ABC: netlist                       : i/o =   78/  147  lat =    0  nd =   790  edge =   1841  area =7588.77  delay =22.00  lev = 22
+ABC: + write_blif /tmp/yosys-abc-GLmTjI/output.blif 
+
+136.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       35
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       27
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       33
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:       28
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       87
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       67
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       72
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       51
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       49
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:      122
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:       51
+ABC RESULTS:        internal signals:      986
+ABC RESULTS:           input signals:       78
+ABC RESULTS:          output signals:      147
+Removing temp directory.
+
+137. Executing SETUNDEF pass (replace undef values with defined constants).
+
+138. Executing HILOMAP pass (mapping to constant drivers).
+
+139. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+140. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dynamic_noise_filter_top..
+Removed 2 unused cells and 1230 unused wires.
+<suppressed ~5 debug messages>
+
+141. Executing INSBUF pass (insert buffer cells for connected wires).
+
+142. Executing CHECK pass (checking for obvious problems).
+Checking module dynamic_noise_filter_top...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.51 (git sha1 c4b519022, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/asic/workspace/asic_project/runs/RUN_2025-06-17_21-07-06/tmp/c7afc231c2a848aca236be88dfafc933.lib ",
+   "modules": {
+      "\\dynamic_noise_filter_top": {
+         "num_wires":         869,
+         "num_wire_bits":     869,
+         "num_pub_wires":     79,
+         "num_pub_wire_bits": 79,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         864,
+         "area":              9531.641600,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a211o_2": 1,
+            "sky130_fd_sc_hd__a21bo_2": 5,
+            "sky130_fd_sc_hd__a21boi_2": 3,
+            "sky130_fd_sc_hd__a21o_2": 35,
+            "sky130_fd_sc_hd__a21oi_2": 27,
+            "sky130_fd_sc_hd__a221o_2": 1,
+            "sky130_fd_sc_hd__a22o_2": 6,
+            "sky130_fd_sc_hd__a22oi_2": 1,
+            "sky130_fd_sc_hd__a2bb2o_2": 3,
+            "sky130_fd_sc_hd__a2bb2oi_2": 1,
+            "sky130_fd_sc_hd__a311o_2": 1,
+            "sky130_fd_sc_hd__a31o_2": 7,
+            "sky130_fd_sc_hd__a32o_2": 3,
+            "sky130_fd_sc_hd__a41o_2": 1,
+            "sky130_fd_sc_hd__a41oi_2": 1,
+            "sky130_fd_sc_hd__and2_2": 33,
+            "sky130_fd_sc_hd__and2b_2": 28,
+            "sky130_fd_sc_hd__and3_2": 22,
+            "sky130_fd_sc_hd__and3b_2": 4,
+            "sky130_fd_sc_hd__and4_2": 2,
+            "sky130_fd_sc_hd__dfrtp_2": 74,
+            "sky130_fd_sc_hd__inv_2": 87,
+            "sky130_fd_sc_hd__mux2_1": 67,
+            "sky130_fd_sc_hd__nand2_2": 72,
+            "sky130_fd_sc_hd__nand2b_2": 13,
+            "sky130_fd_sc_hd__nand3_2": 7,
+            "sky130_fd_sc_hd__nand3b_2": 1,
+            "sky130_fd_sc_hd__nand4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 51,
+            "sky130_fd_sc_hd__nor3_2": 2,
+            "sky130_fd_sc_hd__nor3b_2": 2,
+            "sky130_fd_sc_hd__o211a_2": 3,
+            "sky130_fd_sc_hd__o21a_2": 11,
+            "sky130_fd_sc_hd__o21ai_2": 23,
+            "sky130_fd_sc_hd__o21ba_2": 6,
+            "sky130_fd_sc_hd__o21bai_2": 2,
+            "sky130_fd_sc_hd__o221a_2": 1,
+            "sky130_fd_sc_hd__o22a_2": 3,
+            "sky130_fd_sc_hd__o2bb2a_2": 2,
+            "sky130_fd_sc_hd__o2bb2ai_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 4,
+            "sky130_fd_sc_hd__o31ai_2": 1,
+            "sky130_fd_sc_hd__o32a_2": 4,
+            "sky130_fd_sc_hd__or2_2": 49,
+            "sky130_fd_sc_hd__or3_2": 12,
+            "sky130_fd_sc_hd__or3b_2": 4,
+            "sky130_fd_sc_hd__or4_2": 1,
+            "sky130_fd_sc_hd__or4b_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 122,
+            "sky130_fd_sc_hd__xor2_2": 51
+         }
+      }
+   },
+      "design": {
+         "num_wires":         869,
+         "num_wire_bits":     869,
+         "num_pub_wires":     79,
+         "num_pub_wire_bits": 79,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         864,
+         "area":              9531.641600,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a211o_2": 1,
+            "sky130_fd_sc_hd__a21bo_2": 5,
+            "sky130_fd_sc_hd__a21boi_2": 3,
+            "sky130_fd_sc_hd__a21o_2": 35,
+            "sky130_fd_sc_hd__a21oi_2": 27,
+            "sky130_fd_sc_hd__a221o_2": 1,
+            "sky130_fd_sc_hd__a22o_2": 6,
+            "sky130_fd_sc_hd__a22oi_2": 1,
+            "sky130_fd_sc_hd__a2bb2o_2": 3,
+            "sky130_fd_sc_hd__a2bb2oi_2": 1,
+            "sky130_fd_sc_hd__a311o_2": 1,
+            "sky130_fd_sc_hd__a31o_2": 7,
+            "sky130_fd_sc_hd__a32o_2": 3,
+            "sky130_fd_sc_hd__a41o_2": 1,
+            "sky130_fd_sc_hd__a41oi_2": 1,
+            "sky130_fd_sc_hd__and2_2": 33,
+            "sky130_fd_sc_hd__and2b_2": 28,
+            "sky130_fd_sc_hd__and3_2": 22,
+            "sky130_fd_sc_hd__and3b_2": 4,
+            "sky130_fd_sc_hd__and4_2": 2,
+            "sky130_fd_sc_hd__dfrtp_2": 74,
+            "sky130_fd_sc_hd__inv_2": 87,
+            "sky130_fd_sc_hd__mux2_1": 67,
+            "sky130_fd_sc_hd__nand2_2": 72,
+            "sky130_fd_sc_hd__nand2b_2": 13,
+            "sky130_fd_sc_hd__nand3_2": 7,
+            "sky130_fd_sc_hd__nand3b_2": 1,
+            "sky130_fd_sc_hd__nand4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 51,
+            "sky130_fd_sc_hd__nor3_2": 2,
+            "sky130_fd_sc_hd__nor3b_2": 2,
+            "sky130_fd_sc_hd__o211a_2": 3,
+            "sky130_fd_sc_hd__o21a_2": 11,
+            "sky130_fd_sc_hd__o21ai_2": 23,
+            "sky130_fd_sc_hd__o21ba_2": 6,
+            "sky130_fd_sc_hd__o21bai_2": 2,
+            "sky130_fd_sc_hd__o221a_2": 1,
+            "sky130_fd_sc_hd__o22a_2": 3,
+            "sky130_fd_sc_hd__o2bb2a_2": 2,
+            "sky130_fd_sc_hd__o2bb2ai_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 4,
+            "sky130_fd_sc_hd__o31ai_2": 1,
+            "sky130_fd_sc_hd__o32a_2": 4,
+            "sky130_fd_sc_hd__or2_2": 49,
+            "sky130_fd_sc_hd__or3_2": 12,
+            "sky130_fd_sc_hd__or3b_2": 4,
+            "sky130_fd_sc_hd__or4_2": 1,
+            "sky130_fd_sc_hd__or4b_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 122,
+            "sky130_fd_sc_hd__xor2_2": 51
+         }
+      }
+}
+
+143. Printing statistics.
+
+=== dynamic_noise_filter_top ===
+
+   Number of wires:                869
+   Number of wire bits:            869
+   Number of public wires:          79
+   Number of public wire bits:      79
+   Number of ports:                  6
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                864
+     sky130_fd_sc_hd__a211o_2        1
+     sky130_fd_sc_hd__a21bo_2        5
+     sky130_fd_sc_hd__a21boi_2       3
+     sky130_fd_sc_hd__a21o_2        35
+     sky130_fd_sc_hd__a21oi_2       27
+     sky130_fd_sc_hd__a221o_2        1
+     sky130_fd_sc_hd__a22o_2         6
+     sky130_fd_sc_hd__a22oi_2        1
+     sky130_fd_sc_hd__a2bb2o_2       3
+     sky130_fd_sc_hd__a2bb2oi_2      1
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2         7
+     sky130_fd_sc_hd__a32o_2         3
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__a41oi_2        1
+     sky130_fd_sc_hd__and2_2        33
+     sky130_fd_sc_hd__and2b_2       28
+     sky130_fd_sc_hd__and3_2        22
+     sky130_fd_sc_hd__and3b_2        4
+     sky130_fd_sc_hd__and4_2         2
+     sky130_fd_sc_hd__dfrtp_2       74
+     sky130_fd_sc_hd__inv_2         87
+     sky130_fd_sc_hd__mux2_1        67
+     sky130_fd_sc_hd__nand2_2       72
+     sky130_fd_sc_hd__nand2b_2      13
+     sky130_fd_sc_hd__nand3_2        7
+     sky130_fd_sc_hd__nand3b_2       1
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2        51
+     sky130_fd_sc_hd__nor3_2         2
+     sky130_fd_sc_hd__nor3b_2        2
+     sky130_fd_sc_hd__o211a_2        3
+     sky130_fd_sc_hd__o21a_2        11
+     sky130_fd_sc_hd__o21ai_2       23
+     sky130_fd_sc_hd__o21ba_2        6
+     sky130_fd_sc_hd__o21bai_2       2
+     sky130_fd_sc_hd__o221a_2        1
+     sky130_fd_sc_hd__o22a_2         3
+     sky130_fd_sc_hd__o2bb2a_2       2
+     sky130_fd_sc_hd__o2bb2ai_2      1
+     sky130_fd_sc_hd__o311a_2        1
+     sky130_fd_sc_hd__o31a_2         4
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2         4
+     sky130_fd_sc_hd__or2_2         49
+     sky130_fd_sc_hd__or3_2         12
+     sky130_fd_sc_hd__or3b_2         4
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__or4b_2         1
+     sky130_fd_sc_hd__xnor2_2      122
+     sky130_fd_sc_hd__xor2_2        51
+
+   Chip area for module '\dynamic_noise_filter_top': 9531.641600
+     of which used for sequential elements: 1944.364800 (20.40%)
+
+144. Executing AUTONAME pass.
+Renamed 4183 objects in module dynamic_noise_filter_top (29 iterations).
+<suppressed ~1654 debug messages>
+
+145. Executing Verilog backend.
+Dumping module `\dynamic_noise_filter_top'.
+
+146. Executing JSON backend.

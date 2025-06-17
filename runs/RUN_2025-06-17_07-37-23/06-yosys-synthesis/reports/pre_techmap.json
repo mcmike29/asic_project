@@ -1,0 +1,59 @@
+{
+   "creator": "Yosys 0.51 (git sha1 c4b519022, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/asic/workspace/asic_project/runs/RUN_2025-06-17_07-37-23/tmp/4b74062afbf044a79dbc46f45382f093.lib ",
+   "modules": {
+      "\\dynamic_noise_filter_top": {
+         "num_wires":         1096,
+         "num_wire_bits":     1193,
+         "num_pub_wires":     14,
+         "num_pub_wire_bits": 81,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1171,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 370,
+            "$_AND_": 20,
+            "$_DFFE_PP0P_": 56,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 17,
+            "$_NAND_": 16,
+            "$_NOR_": 47,
+            "$_NOT_": 56,
+            "$_ORNOT_": 38,
+            "$_OR_": 137,
+            "$_XNOR_": 99,
+            "$_XOR_": 297
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1096,
+         "num_wire_bits":     1193,
+         "num_pub_wires":     14,
+         "num_pub_wire_bits": 81,
+         "num_ports":         6,
+         "num_port_bits":     6,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1171,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 370,
+            "$_AND_": 20,
+            "$_DFFE_PP0P_": 56,
+            "$_DFF_PP0_": 18,
+            "$_MUX_": 17,
+            "$_NAND_": 16,
+            "$_NOR_": 47,
+            "$_NOT_": 56,
+            "$_ORNOT_": 38,
+            "$_OR_": 137,
+            "$_XNOR_": 99,
+            "$_XOR_": 297
+         }
+      }
+}
+

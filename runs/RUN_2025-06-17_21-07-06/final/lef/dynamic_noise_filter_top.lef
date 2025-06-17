@@ -1,0 +1,242 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO dynamic_noise_filter_top
+  CLASS BLOCK ;
+  FOREIGN dynamic_noise_filter_top ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 700.000 BY 700.000 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT -14.830 -9.470 -11.730 708.510 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 -9.470 714.490 -6.370 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 705.410 714.490 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 711.390 -9.470 714.490 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 27.570 -9.470 30.670 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 127.570 -9.470 130.670 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 227.570 -9.470 230.670 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 327.570 -9.470 330.670 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 427.570 -9.470 430.670 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 527.570 -9.470 530.670 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 627.570 -9.470 630.670 708.510 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 32.930 714.490 36.030 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 132.930 714.490 136.030 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 232.930 714.490 236.030 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 332.930 714.490 336.030 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 432.930 714.490 436.030 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 532.930 714.490 536.030 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 632.930 714.490 636.030 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT -10.030 -4.670 -6.930 703.710 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -10.030 -4.670 709.690 -1.570 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -10.030 700.610 709.690 703.710 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 706.590 -4.670 709.690 703.710 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 8.970 -9.470 12.070 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 108.970 -9.470 112.070 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 208.970 -9.470 212.070 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 308.970 -9.470 312.070 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 408.970 -9.470 412.070 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 508.970 -9.470 512.070 708.510 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 608.970 -9.470 612.070 708.510 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 14.330 714.490 17.430 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 114.330 714.490 117.430 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 214.330 714.490 217.430 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 314.330 714.490 317.430 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 414.330 714.490 417.430 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 514.330 714.490 517.430 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -14.830 614.330 714.490 617.430 ;
+    END
+  END VPWR
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 465.840 4.000 466.440 ;
+    END
+  END clk
+  PIN reset
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 462.440 4.000 463.040 ;
+    END
+  END reset
+  PIN spi_clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 418.240 4.000 418.840 ;
+    END
+  END spi_clk
+  PIN spi_miso
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 408.040 4.000 408.640 ;
+    END
+  END spi_miso
+  PIN spi_mosi
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT 696.000 370.640 700.000 371.240 ;
+    END
+  END spi_mosi
+  PIN spi_sel
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 428.440 4.000 429.040 ;
+    END
+  END spi_sel
+  OBS
+      LAYER nwell ;
+        RECT 5.330 10.795 694.330 688.350 ;
+      LAYER li1 ;
+        RECT 5.520 10.795 694.140 688.245 ;
+      LAYER met1 ;
+        RECT 0.530 10.640 694.140 688.400 ;
+      LAYER met2 ;
+        RECT 0.550 10.695 692.210 688.345 ;
+      LAYER met3 ;
+        RECT 0.525 466.840 696.000 688.325 ;
+        RECT 4.400 465.440 696.000 466.840 ;
+        RECT 0.525 463.440 696.000 465.440 ;
+        RECT 4.400 462.040 696.000 463.440 ;
+        RECT 0.525 429.440 696.000 462.040 ;
+        RECT 4.400 428.040 696.000 429.440 ;
+        RECT 0.525 419.240 696.000 428.040 ;
+        RECT 4.400 417.840 696.000 419.240 ;
+        RECT 0.525 409.040 696.000 417.840 ;
+        RECT 4.400 407.640 696.000 409.040 ;
+        RECT 0.525 371.640 696.000 407.640 ;
+        RECT 0.525 370.240 695.600 371.640 ;
+        RECT 0.525 10.715 696.000 370.240 ;
+  END
+END dynamic_noise_filter_top
+END LIBRARY
+

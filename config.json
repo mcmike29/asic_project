@@ -1,5 +1,5 @@
 {
-    "DESIGN_NAME": "dynamic_noise_reduction_top",
+    "DESIGN_NAME": "dynamic_noise_filter_top",
     "VERILOG_FILES": [
         "rtl/spi_rx.sv",
         "rtl/spi_tx.sv",
