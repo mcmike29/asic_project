@@ -1,5 +1,4 @@
-# asic_project
-CPE 470 ASIC final project
+# ASIC Project: Dynamic Noise Reduction Filter
 
 Overview:
 This is a simulated, chip-level design of a dynamic noise reduction filter designed with audio usages in mind.
