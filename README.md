@@ -1,6 +1,10 @@
 # asic_project
 CPE 470 ASIC final project
 
+Overview:
+This is a simulated, chip-level design of a dynamic noise reduction filter designed with audio usages in mind.
+Utilizes Verilog for the on-chip architecture and CocoTB for testing and simulation.
+
 Simulation of actual audio file filtering with a low alpha (a = 0.25, strong noise supression)
 (this uses python as the ADC/DAC interface replacing SPI for fast sampling on a file):
 
